@@ -32,7 +32,7 @@
 
 
 .dropdown_profile {
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 200px;
     height: 100px;
@@ -59,7 +59,9 @@
 
 }
 
-
+.dropdown_profile[data-modal="off"] {
+    display: none;
+}
 
 .header_icon {
     line-height: 60px;
@@ -94,6 +96,7 @@
     cursor: pointer;
     background-color: #EBEBF0;
 }
+
 
 .header_profile_btn+.header_profile_btn {
     margin-bottom: 5px;

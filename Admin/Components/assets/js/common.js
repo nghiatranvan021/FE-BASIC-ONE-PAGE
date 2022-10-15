@@ -1,8 +1,10 @@
 // loadHtml
+
+
 function loadFileHtml(idTag, curlFile) {
     const htmlLoad = document.getElementById(idTag);
     htmlLoad.innerHTML = `<iframe src="${curlFile}.html"
-    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>`;
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>`;
 }
 
 // open close sidebar
@@ -24,7 +26,7 @@ function openCloseSideBar() {
     }
 }
 function activeSideBar(idButton) {
-    loading(3000);
+    loading();
     const btnOther = document.querySelectorAll('.sidebar_li');
     const btnAddClass = document.querySelector(idButton);
     if (btnOther) {
@@ -38,7 +40,7 @@ function activeSideBar(idButton) {
 }
 
 
-function loading(duration) {
+function loading(duration = 1500) {
     const loading = document.querySelector('.model_loading');
     if (loading) {
         loading.style.display = 'flex';
@@ -46,5 +48,70 @@ function loading(duration) {
     const clearTimeout = setTimeout(() => {
         loading.style.display = 'none';
     }, duration)
-    // clearTimeout(clearTimeout);
+
+}
+// handle off modal profile
+function activeDropdown(e) {
+    const modal = document.querySelector('.dropdown_profile');
+    modal.getAttribute('data-modal') === 'off' ? modal.setAttribute('data-modal', 'on') : modal.setAttribute('data-modal', 'off')
+}
+
+
+// mesage
+function toast({
+    title = "Success",
+    message = "",
+    type = "success",
+    duration = 5000,
+}) {
+
+    const main = document.getElementsByClassName('toast__message-custom');
+
+    if (main) {
+        const toast = document.createElement("div");
+        const icons = {
+            success: "fa fa-check-circle",
+            error: "fa fa-times-circle",
+        };
+        // auto close
+        const autoClose = setTimeout(function () {
+            main[0].removeChild(toast);
+        }, duration + 1000);
+        //click close
+        toast.onclick = function (e) {
+            if (e.target.closest(".message__close")) {
+                main[0].removeChild(toast);
+                clearTimeout(autoClose);
+            }
+        };
+        const icon = icons[type];
+        toast.classList.add("message", `toast--message-${type}`);
+        const delay = (duration / 1000).toFixed(2);
+        toast.style.animation = `animation ease 0.3s,animationFadeout linear 1s ${delay}s forwards`;
+        toast.innerHTML = ` 
+                            <div class="message__icon">
+                                <i class="${icon}" aria-hidden="true"></i>
+                            </div>
+                            <div class="message__body">
+                                <h4 class="message__title">
+                                    ${title}
+                                </h4>
+                                <p class="message__message">
+                                    ${message}
+                                </p>
+                            </div>
+                            <div class="message__close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>`;
+        main[0].appendChild(toast);
+    }
+}
+// hàm call message
+function showMessage(title, message, type, duration) {
+    toast({
+        title: title,
+        message: message,
+        type: type,
+        duration: duration,
+    });
 }

@@ -2,6 +2,7 @@
 <script>
     const queryString = window.location.search;
     // check middleware here
+    console.log(queryString);
     switch (queryString) {
         case '?admin-login':
             window.location = './Admin/Login/login.html';
@@ -9,7 +10,7 @@
         case '?admin-account':
             window.location = './Admin/Components/layout.html';
             break;
-
-        default:
+        case '404': break;
+        default: ;
     }
 </script>

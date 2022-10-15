@@ -9,10 +9,14 @@
         <img src="https://lh3.googleusercontent.com/ogw/AOh-ky2WSQimQiJ-ikW_fwRzDgzgWsduLlBhitkJHcXZ=s64-c-mo"
             alt="avtar">
         <p>NghiaTran
-            <i class="fa-solid fa-caret-down"></i>
+            <i onclick="activeDropdown(this)" class="fa-solid fa-caret-down">
+            </i>
         </p>
+
     </div>
-    <div class="dropdown_profile">
+
+
+    <div onclick="activeDropdown(this)" data-modal="off" class="dropdown_profile">
         <ul class="header_ul">
             <li>
                 <button class="header_profile_btn">
@@ -30,4 +34,5 @@
             </li>
         </ul>
     </div>
+
 </div>
