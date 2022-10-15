@@ -1,0 +1,15 @@
+<script src="./Admin/Components/assets/js/common.js"></script>
+<script>
+    const queryString = window.location.search;
+    // check middleware here
+    switch (queryString) {
+        case '?admin-login':
+            window.location = './Admin/Login/login.html';
+            break;
+        case '?admin-account':
+            window.location = './Admin/Components/layout.html';
+            break;
+
+        default:
+    }
+</script>
