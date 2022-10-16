@@ -5,12 +5,14 @@
     console.log(queryString);
     switch (queryString) {
         case '?admin-login':
-            window.location = './Admin/Login/login.html';
+            window.location = './Admin/Login';
             break;
         case '?admin-account':
             window.location = './Admin/Components/layout.html';
             break;
         case '404': break;
-        default: ;
+        default:
+            alert('index.html client')
+                ;
     }
 </script>

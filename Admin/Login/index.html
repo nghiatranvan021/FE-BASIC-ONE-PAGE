@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../Components/assets/css/global.css">
+    <title>ADMIN</title>
+    <script src="../assets/js/validate.js"></script>
+</head>
+
+<body>
+    <div class="login">
+        <div class="model_loading">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="toast__message-custom"></div>
+        <div class="login_form">
+            <div class="login_logo">
+                <img src="../assets/images/logo.png" alt="logo">
+                <p> ADMIN</p>
+            </div>
+            <div id="login_form_load" class="login_form-input">
+
+            </div>
+        </div>
+        <div class="login_contact">
+            <div class="login_contact_modal">
+                <img src="../assets/images/Art-work.png" alt="Art-work">
+            </div>
+            <div class="login_coppyright">
+                <p>Copyright @ web1.vn Term of use • Privacy policy • Help center</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../Components/assets/js/common.js"></script>
+
+    <script type="text/javascript" defer>
+
+
+        loadFileHtml('login_form_load', './login');
+
+        function onValidateLogin(e) {
+            return Validator({
+                form: '#form_login',
+                formGroupSelector: '.form_group',
+                errorSelector: '.form-message',
+                rules: [
+
+                    Validator.isRequired('#login_email', "Email is required."),
+                    Validator.isEmail('#login_email', "Email is invalid."),
+                    Validator.isRequired('#login_password', "Password is required."),
+                    Validator.minLength('#login_password', 6, "Password must be at least 6 characters."),
+                ],
+            })
+
+
+        }
+        function onValidateForgot() {
+            Validator({
+                form: '#form_forgot',
+                formGroupSelector: '.form_group',
+                errorSelector: '.form-message',
+                rules: [
+
+                    Validator.isRequired('#forgot_email', "Email is required."),
+                    Validator.isEmail('#forgot_email', "Email is invalid."),
+
+                ],
+            })
+        }
+        function submitForgot(e) {
+            loadingButton(e, true);
+            e.onCLick = (event) => {
+                event.preventDefault()
+            }
+
+        }
+        function submitLogin(e) {
+            loadingButton(e, true);
+            e.onCLick = (event) => {
+                event.preventDefault()
+            }
+
+            console.log('fun');
+
+        }
+
+    </script>
+</body>
+
+</html>

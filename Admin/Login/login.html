@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/login.css">
-    <link rel="stylesheet" href="../Components/assets/css/global.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="login">
-        <div class="login_form">
-            <div class="login_logo">
-                <img src="../Components/assets/images/logo.png" alt="logo">
-            </div>
+<div onchange="onValidateLogin()" class="modal_login">
+    <p>login</p>
+    <form action="" id="form_login" class="modal_form_login" method="post">
+        <div class="form_group">
+            <label for="">Email</label>
+            <input type="text" name="" id="login_email" placeholder="Email Enter...">
+            <span class="form-message"></span>
         </div>
-        <div class="login_contact"></div>
-    </div>
-    <script src="../assets/js/validate.js"></script>
-</body>
+        <div class="form_group">
+            <label for="">Password</label>
+            <input type="password" name="" id="login_password" placeholder="Password Enter...">
+            <span class="form-message"></span>
+        </div>
+        <button type="button" class="" onclick="submitLogin(this);" id="login_button"><span
+                class="button__text">login</span></button>
+    </form>
+    <p class="modal_forgot"><a onclick=" loadFileHtml('login_form_load', './forgot_password')" href="#">forgot
+            password?</a></p>
 
-</html>
+</div>

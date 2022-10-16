@@ -2,6 +2,7 @@
 
 
 function loadFileHtml(idTag, curlFile) {
+    loading(2000);
     const htmlLoad = document.getElementById(idTag);
     htmlLoad.innerHTML = `<iframe src="${curlFile}.html"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>`;
@@ -26,7 +27,6 @@ function openCloseSideBar() {
     }
 }
 function activeSideBar(idButton) {
-    loading();
     const btnOther = document.querySelectorAll('.sidebar_li');
     const btnAddClass = document.querySelector(idButton);
     if (btnOther) {
@@ -114,4 +114,17 @@ function showMessage(title, message, type, duration) {
         type: type,
         duration: duration,
     });
+}
+// loading btn
+function loadingButton(e, isShow = true) {
+    if (isShow) {
+
+        e.classList.toggle('button--loading');
+        e.style.cursor = 'not-allowed';
+        e.style.pointerEvents = 'none';
+    } else {
+        e.classList.toggle('button--loading');
+        e.style.cursor = 'pointer';
+        e.style.pointerEvents = 'auto';
+    }
 }
