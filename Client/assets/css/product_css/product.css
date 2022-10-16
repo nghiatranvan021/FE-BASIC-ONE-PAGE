@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root{
+    --main-color : #87a96b;
+}
+body{
+    font-family: "Roboto";
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+.container{
+    width: 88vw;
+    margin: 0 auto;
+}
+.lg-title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.products{
+    background: rgba(255, 255, 255,0.5);
+    padding: 3.2rem 0;
+}
+.product{
+    background: var(--main-color);
+    margin: 2rem;
+    width: 300px;
+    height: 380px;
+}
+.product-content{
+    padding-top: 10px;
+    cursor: pointer;
+}
+.product-img{
+    width: 275px;
+    height: 275px;
+    margin: auto;
+    border-radius: 50%;
+}
+.product-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    opacity: 1;
+    transform: opacity 0.6s ease;
+}
+.btn-cart, .btn-buy{
+    background: transparent;
+    border: 1px solid black;
+    padding: 1rem;
+    font: bold;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+.btn-cart{
+    background: black;
+    color: white;
+    border: none;
+}
+.btn-cart:hover{
+    background: darkgreen;
+    color: white;
+}
+.btn-buy{
+    background:white;
+    color: black;
+}
+.btn-buy:hover{
+    background: darkgreen;
+    color: white;   
+}
+.product-info{
+    width: auto;
+    height: auto;
+    background: lightgray;
+    
+}
