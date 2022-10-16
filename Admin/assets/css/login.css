@@ -1,0 +1,14 @@
+.login {
+    display: flex;
+    height: 100vh;
+}
+
+.login_form {
+    background: #fff;
+    width: 60%;
+}
+
+.login_contact {
+    background: linear-gradient(138.19deg, #003084 4.98%, #0294D7 100%);
+    flex: 1;
+}
