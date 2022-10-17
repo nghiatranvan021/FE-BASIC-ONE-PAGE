@@ -7,74 +7,84 @@ body{
     font-family: "Roboto";
 }
 
-img{
-    width: 100%;
-    display: block;
-}
-.container{
-    width: 88vw;
-    margin: 0 auto;
-}
-.lg-title{
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 100px;
-}
-.products{
-    background: rgba(255, 255, 255,0.5);
-    padding: 3.2rem 0;
-}
-.product{
-    background: var(--main-color);
-    margin: 2rem;
-    width: 300px;
-    height: 380px;
+.products-layout{
+    display: flex;
+    flex-wrap: wrap;
 }
 .product-content{
-    padding-top: 10px;
-    cursor: pointer;
+    background-color: #87a96b;
+    padding: 10px 10px 10px;
+
+    margin-left: 150px;
+    margin-top: 100px;
+    border: solid black;
 }
-.product-img{
-    width: 275px;
-    height: 275px;
-    margin: auto;
-    border-radius: 50%;
+img{
+    width: 280px;
+    height: 280px;
+    padding-bottom: 0.5rem;
 }
-.product-button{
+.product{
     display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    opacity: 1;
-    transform: opacity 0.6s ease;
+    flex-direction: column;
 }
-.btn-cart, .btn-buy{
+.product-info{
+    background-color: lightgray;
+    padding: 10px 0px 10px;
+
+    margin-left: 150px;
+    
+    border: solid black;
+    
+}
+.info-top{
+    margin:0px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.type{
+    text-decoration: underline;
+}
+.price{
+    display: flex;
+    justify-content: right;
+    font-style: italic;
+}
+.name{
+    margin-top: 5px;
+    margin-left: 10px;
+    color: blue;
+    font-size: 18px;
+}
+.product-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-buy, .btn-add{
     background: transparent;
     border: 1px solid black;
-    padding: 1rem;
-    font: bold;
+    padding: 0.8rem 0;
     cursor: pointer;
     transition: all 0.6s ease;
+    font-size: 17.5px;
 }
-.btn-cart{
+.btn-add{
     background: black;
     color: white;
-    border: none;
-}
-.btn-cart:hover{
-    background: darkgreen;
-    color: white;
+    border: 1px solid white;
 }
 .btn-buy{
-    background:white;
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+.btn-add:hover{
+    background :lightgray;
     color: black;
 }
 .btn-buy:hover{
-    background: darkgreen;
-    color: white;   
+    background:lightgreen;
+    color: black;
 }
-.product-info{
-    width: auto;
-    height: auto;
-    background: lightgray;
-    
-}
+
