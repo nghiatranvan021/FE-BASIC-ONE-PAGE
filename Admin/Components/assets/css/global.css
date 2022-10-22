@@ -271,6 +271,7 @@ body {
 /* tooltip */
 [data-tool-tip]::after {
     content: attr(data-tool-tip-content);
+    transition: all 1s;
     position: absolute;
     width: 87px;
     height: 28px;

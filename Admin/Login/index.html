@@ -14,6 +14,8 @@
 
     <title>ADMIN</title>
     <script src="../assets/js/validate.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </head>
 
 <body>
@@ -50,7 +52,24 @@
 
     <script type="text/javascript" defer>
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
+            const token = localStorage.getItem("access_token");
 
+            if (token !== null) {
+                const { email, password } = JSON.parse(atob(token));
+                let isCheck = false;
+                accounts.filter((account) => {
+                    if (email === account.email && password === atob(account.password && account.role === 'admin')) {
+                        isCheck = true;
+                    }
+                });
+                if (!isCheck) {
+                    window.location.href = '../Components/layout.html';
+                }
+            }
+
+        });
         loadFileHtml('login_form_load', './login');
 
         function onValidateLogin(e) {
@@ -83,10 +102,66 @@
             })
         }
         function submitForgot(e) {
-            loadingButton(e, true);
             e.onCLick = (event) => {
                 event.preventDefault()
             }
+            const email = document.getElementById("forgot_email").value;
+            if (email !== "") {
+                loadingButton(e, true);
+                const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
+                let isCheck = false;
+                const subject = 'Forgot Password';
+
+                accounts.filter((account) => {
+                    if (email === account.email && account.role === 'admin') {
+                        isCheck = true;
+                    }
+                });
+                if (isCheck) {
+                    const password_forgot = Math.floor(Math.random() * 6000000) + 1
+                    Email.send({
+                        Host: "smtp.elasticemail.com",
+                        Username: "miniappmarketing@gmail.com",
+                        Password: "87959F06A266B8C7A359CF8F3926A5A8DFDE",
+                        To: email.trim(),
+                        From: "miniappmarketing@gmail.com",
+                        Subject: subject,
+                        Body: "password :" + password_forgot,
+                    }).then(
+
+                        message => {
+                            let result = [];
+                            loadingButton(e, false);
+                            if (message === 'OK') {
+                                accounts.filter((account) => {
+                                    if (email === account.email && account.role === 'admin') {
+                                        result = [
+                                            {
+                                                ...account,
+                                                password: btoa(password_forgot),
+                                                updated_at: new Date().toLocaleDateString('en-US'),
+                                            }
+                                        ];
+                                    } else {
+                                        result = [
+                                            { ...account },
+                                        ];
+                                    }
+                                });
+                                localStorage.setItem('accountAdmin', JSON.stringify(result));
+                                showMessage('Success', 'Sented mail successfully', 'success', 3000)
+                            } else {
+                                showMessage('Errors', 'Sented mail failed', 'error', 3000)
+                            }
+                        }
+                    );
+                } else {
+                    loadingButton(e, false);
+                }
+            } else {
+                showMessage('Error', 'Email is invalid', 'error', 3000)
+            }
+
 
         }
         function submitLogin(e) {
@@ -102,13 +177,18 @@
                 const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
                 let isCheck = false;
                 accounts.filter((account) => {
-                    if (email === account.email && password === atob(account.password)) {
+                    if (email === account.email && password === atob(account.password) && account.role === 'admin') {
                         isCheck = true;
                     }
                 });
 
                 if (isCheck) {
+                    const token = {
+                        email: email,
+                        password: password
+                    };
                     setTimeout(() => {
+                        localStorage.setItem('access_token', btoa(JSON.stringify(token)));
                         showMessage('Success', 'Login successfully', 'success', 3000)
                         window.location.href = '../Components/layout.html';
                     }, 2500)

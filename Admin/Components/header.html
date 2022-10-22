@@ -26,7 +26,7 @@
                 </button>
             </li>
             <li>
-                <button class="header_profile_btn logout_danger">
+                <button onclick="handelLogOut()" class="header_profile_btn logout_danger">
                     <i class="fa-solid fa-right-from-bracket"></i>
 
                     <span> Logout</span>
@@ -34,5 +34,17 @@
             </li>
         </ul>
     </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const avatar = document.querySelector('.header_profile');
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            const html = `<img src="${userInfo.avatar}"
+            alt="avtar">
+        <p>${userInfo.first_name} ${userInfo.last_name}
+            <i onclick="activeDropdown(this)" class="fa-solid fa-caret-down">
+            </i>
+        </p>`;
+            avatar.innerHTML = html;
+        });
+    </script>
 </div>

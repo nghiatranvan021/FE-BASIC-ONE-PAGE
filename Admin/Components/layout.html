@@ -51,6 +51,32 @@
         loadFileHtml('header', '../Components/header')
         loadFileHtml('sidebar', '../Components/sidebar')
         loadFileHtml('content', '../Dasboard/dasboard')
+        document.addEventListener('DOMContentLoaded', () => {
+            const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
+            const token = localStorage.getItem("access_token");
+            if (token !== null) {
+                const { email, password } = JSON.parse(atob(token));
+
+                let isCheck = false;
+                let userInfo = {};
+                accounts.filter((account) => {
+                    if (email === account.email && password === atob(account.password)) {
+                        isCheck = true;
+                        userInfo = {
+                            ...account,
+                            password: null
+                        }
+                    }
+                });
+                if (!isCheck) {
+                    window.location.href = '../Login/';
+                } else {
+                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                }
+
+            }
+
+        });
     </script>
 </body>
 

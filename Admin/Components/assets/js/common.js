@@ -131,7 +131,7 @@ function loadingButton(e, isShow = true) {
 }
 function handleHoverSibar(e) {
     const sideBar = document.getElementById('sidebar');
-    if (sideBar.offsetWidth <= (screen.width * 0.12)) {
+    if (sideBar.offsetWidth <= Math.round(screen.width * 0.04)) {
         if (e.hasAttribute('data-tool-tip')) {
             e.removeAttribute('data-tool-tip');
         } else {
@@ -140,56 +140,111 @@ function handleHoverSibar(e) {
 
     }
 }
-// wraning trick admin
-function createAdminAccount() {
-    const data = [{
-        id: 1,
-        first_name: 'Trần',
-        last_name: 'Nghĩa',
-        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
-        role: 'admin',
-        gender: 'male',
-        status: true,
-        address: 'Hồ Chí Minh',
-        email: 'tranvannghia021@gmail.com',
-        phone: '0945251832',
-        password: btoa('123456'),
-        created_at: new Date().toLocaleDateString('en-US'),
-        updated_at: new Date().toLocaleDateString('en-US'),
-    }];
-    localStorage.setItem('accountAdmin', JSON.stringify(data));
-    const accounts = [
-        {
-            id: 1,
-            first_name: 'Trần',
-            last_name: 'Phu',
-            avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
-            role: 'user',
-            gender: 'male',
-            address: "Hồ Chí Minh",
-            email: 'tranvannghia021@gmail.com',
-            phone: '0945251832',
-            status: true,
-            password: btoa('123456'),
-            created_at: new Date().toLocaleDateString('en-US'),
-            updated_at: new Date().toLocaleDateString('en-US'),
-        },
-        {
-            id: 2,
-            first_name: 'Nguyễn',
-            last_name: 'Kim',
-            avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
-            role: 'user',
-            gender: 'male',
-            address: "Hồ Chí Minh",
-            email: 'nguyenkim@gmail.com',
-            phone: '00833664573',
-            status: true,
-            password: btoa('123456'),
-            created_at: new Date().toLocaleDateString('en-US'),
-            updated_at: new Date().toLocaleDateString('en-US'),
-        },
-    ];
-    localStorage.setItem('accounts', JSON.stringify(accounts));
+function setCookie(c_name, value, exdays) {
+
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+    document.cookie = c_name + "=" + c_value;
 }
+
+function getCookie(c_name) {
+    var i, x, y, ARRcookies = document.cookie.split(";");
+    for (i = 0; i < ARRcookies.length; i++) {
+        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+        x = x.replace(/^\s+|\s+$/g, "");
+        if (x == c_name) {
+            return unescape(y);
+        }
+    }
+}
+
+
+function handelLogOut() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('userInfo');
+    showMessage('Success', 'Logout successfully', 'success', 2000);
+    setTimeout(() => {
+        window.location.href = '../Login/';
+    }, 1000)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// wraning trick admin
+// function createAdminAccount() {
+//     const data = [{
+//         id: 1,
+//         first_name: 'Trần',
+//         last_name: 'Nghĩa',
+//         avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+//         role: 'admin',
+//         gender: 'male',
+//         status: true,
+//         address: 'Hồ Chí Minh',
+//         email: 'tranvannghia021@gmail.com',
+//         phone: '0945251832',
+//         password: btoa('123456'),
+//         created_at: new Date().toLocaleDateString('en-US'),
+//         updated_at: new Date().toLocaleDateString('en-US'),
+//     }];
+//     localStorage.setItem('accountAdmin', JSON.stringify(data));
+//     const accounts = [
+//         {
+//             id: 1,
+//             first_name: 'Trần',
+//             last_name: 'Phu',
+//             avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+//             role: 'user',
+//             gender: 'male',
+//             address: "Hồ Chí Minh",
+//             email: 'tranvannghia021@gmail.com',
+//             phone: '0945251832',
+//             status: true,
+//             password: btoa('123456'),
+//             created_at: new Date().toLocaleDateString('en-US'),
+//             updated_at: new Date().toLocaleDateString('en-US'),
+//         },
+//         {
+//             id: 2,
+//             first_name: 'Nguyễn',
+//             last_name: 'Kim',
+//             avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+//             role: 'user',
+//             gender: 'male',
+//             address: "Hồ Chí Minh",
+//             email: 'nguyenkim@gmail.com',
+//             phone: '00833664573',
+//             status: true,
+//             password: btoa('123456'),
+//             created_at: new Date().toLocaleDateString('en-US'),
+//             updated_at: new Date().toLocaleDateString('en-US'),
+//         },
+//     ];
+//     localStorage.setItem('accounts', JSON.stringify(accounts));
+// }
+
 // createAdminAccount()
