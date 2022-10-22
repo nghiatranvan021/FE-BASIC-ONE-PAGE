@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../Components/assets/css/global.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <title>ADMIN</title>
     <script src="../assets/js/validate.js"></script>
 </head>
@@ -33,6 +38,7 @@
             <div class="login_contact_modal">
                 <img src="../assets/images/Art-work.png" alt="Art-work">
             </div>
+
             <div class="login_coppyright">
                 <p>Copyright @ web1.vn Term of use • Privacy policy • Help center</p>
 
@@ -84,12 +90,42 @@
 
         }
         function submitLogin(e) {
-            loadingButton(e, true);
             e.onCLick = (event) => {
-                event.preventDefault()
+                event.preventDefault();
+            }
+            const email = document.getElementById("login_email").value;
+            const password = document.getElementById("login_password").value;
+            if (
+                email !== "" && password !== "" && password.length >= 6
+            ) {
+                loadingButton(e, true);
+                const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
+                let isCheck = false;
+                accounts.filter((account) => {
+                    if (email === account.email && password === atob(account.password)) {
+                        isCheck = true;
+                    }
+                });
+
+                if (isCheck) {
+                    setTimeout(() => {
+                        showMessage('Success', 'Login successfully', 'success', 3000)
+                        window.location.href = '../Components/layout.html';
+                    }, 2500)
+                } else {
+                    setTimeout(() => {
+                        loadingButton(e, false);
+                        showMessage('Error', 'Account not found', 'error', 3000)
+                    }, 2500)
+                }
+
+            } else {
+                showMessage('Error', 'Email and password is invalid', 'error', 3000)
             }
 
-            console.log('fun');
+
+
+
 
         }
 

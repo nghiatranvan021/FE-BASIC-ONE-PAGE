@@ -3,6 +3,7 @@
 
 function loadFileHtml(idTag, curlFile) {
     loading(2000);
+
     const htmlLoad = document.getElementById(idTag);
     htmlLoad.innerHTML = `<iframe src="${curlFile}.html"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>`;
@@ -128,3 +129,56 @@ function loadingButton(e, isShow = true) {
         e.style.pointerEvents = 'auto';
     }
 }
+// wraning trick admin
+function createAdminAccount() {
+    const data = [{
+        id: 1,
+        first_name: 'Trần',
+        last_name: 'Nghĩa',
+        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'tranvannghia021@gmail.com',
+        phone: '0945251832',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    }];
+    localStorage.setItem('accountAdmin', JSON.stringify(data));
+    const accounts = [
+        {
+            id: 1,
+            first_name: 'Trần',
+            last_name: 'Phu',
+            avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+            role: 'user',
+            gender: 'male',
+            address: "Hồ Chí Minh",
+            email: 'tranvannghia021@gmail.com',
+            phone: '0945251832',
+            status: true,
+            password: btoa('123456'),
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            first_name: 'Nguyễn',
+            last_name: 'Kim',
+            avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+            role: 'user',
+            gender: 'male',
+            address: "Hồ Chí Minh",
+            email: 'nguyenkim@gmail.com',
+            phone: '00833664573',
+            status: true,
+            password: btoa('123456'),
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+    ];
+    localStorage.setItem('accounts', JSON.stringify(accounts));
+}
+// createAdminAccount()

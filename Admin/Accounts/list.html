@@ -1,3 +1,54 @@
 <div class="account">
-    list accountss
+    <p class="title">List account customer.</p>
+    <div class="account_action">
+        <div class="action_search">
+            <input type="search" onchange="HandleSubmitSearch(this)" class="action_search" placeholder="Search Name...">
+        </div>
+        <div class="action_create"></div>
+    </div>
+    <table class="account_table">
+        <thead>
+            <tr>
+                <th percent="1">
+                    stt
+                </th>
+                <th percent="2">name</th>
+                <th percent="1">phone</th>
+                <th percent="2">email</th>
+                <th percent="2">create Date</th>
+                <th percent="2">action</th>
+            <tr>
+        </thead>
+        <tbody id="account_tbody">
+        </tbody>
+    </table>
+    <div class="container xsmall">
+        <div class="pagination">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li class="activePagination"><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="../assets/js/accounts.js"></script>
+    <script>
+        accountLoadContent();
+    </script>
 </div>
