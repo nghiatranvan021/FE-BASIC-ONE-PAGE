@@ -6,14 +6,16 @@
     </div>
     <ul class="sidebar_ul">
 
-        <li id="sidebar_li-dasboard" class="sidebar_li active"
+        <li onmouseover="handleHoverSibar(this)" onmouseout="handleHoverSibar(this)" id="sidebar_li-dasboard"
+            data-tool-tip-content="Dasboard" class="sidebar_li active"
             onclick="loadFileHtml('content','../Dasboard/dasboard');activeSideBar('#sidebar_li-dasboard');">
             <button class="sildebar_btn sidebar_active">
                 <i class="fa-solid fa-gauge"></i>
                 <span class="visibility "> Dasboard</span>
             </button>
         </li>
-        <li id="sidebar_li-account" class="sidebar_li"
+        <li onmouseover="handleHoverSibar(this)" onmouseout="handleHoverSibar(this)" id="sidebar_li-account"
+            data-tool-tip-content="Accounts" class="sidebar_li"
             onclick="loadFileHtml('content','../Accounts/list');activeSideBar('#sidebar_li-account');">
             <button class="sildebar_btn sidebar_active">
                 <i class="fa-solid fa-user"></i>
@@ -22,7 +24,8 @@
             </button>
         </li>
 
-        <li id="sidebar_li-product" data-tool-tip class="sidebar_li"
+        <li onmouseover="handleHoverSibar(this)" onmouseout="handleHoverSibar(this)" id="sidebar_li-product"
+            data-tool-tip-content="Products" class="sidebar_li"
             onclick="loadFileHtml('content','../Products/list');activeSideBar('#sidebar_li-product');">
             <button class="sildebar_btn sidebar_active">
                 <i class="fa-solid fa-user"></i>

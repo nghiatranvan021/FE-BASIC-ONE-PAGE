@@ -270,7 +270,7 @@ body {
 
 /* tooltip */
 [data-tool-tip]::after {
-    content: "products";
+    content: attr(data-tool-tip-content);
     position: absolute;
     width: 87px;
     height: 28px;

@@ -129,6 +129,17 @@ function loadingButton(e, isShow = true) {
         e.style.pointerEvents = 'auto';
     }
 }
+function handleHoverSibar(e) {
+    const sideBar = document.getElementById('sidebar');
+    if (sideBar.offsetWidth <= (screen.width * 0.12)) {
+        if (e.hasAttribute('data-tool-tip')) {
+            e.removeAttribute('data-tool-tip');
+        } else {
+            e.setAttribute('data-tool-tip', null);
+        }
+
+    }
+}
 // wraning trick admin
 function createAdminAccount() {
     const data = [{
