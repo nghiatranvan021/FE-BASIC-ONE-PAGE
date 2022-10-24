@@ -53,14 +53,26 @@
     <script type="text/javascript" defer>
 
         document.addEventListener('DOMContentLoaded', () => {
+            setInterval(async () => {
+                try {
+                    const online = await fetch("https://img.shields.io/github/workflow/status/ssda/asd/ss");
+
+                    return online.status >= 200 && online.status < 300
+
+                } catch (err) {
+                    window.location.href = '../../Client/Network/network_error.html'
+                    return false;
+                }
+
+            }, 3000)
             const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
             const token = localStorage.getItem("access_token");
 
             if (token !== null) {
-                const { email, password } = JSON.parse(atob(token));
+                const tokenDecode = JSON.parse(atob(token));
                 let isCheck = false;
                 accounts.filter((account) => {
-                    if (email === account.email && password === atob(account.password && account.role === 'admin')) {
+                    if (tokenDecode.email === account.email && tokenDecode.password === atob(account.password && account.role === 'admin')) {
                         isCheck = true;
                     }
                 });

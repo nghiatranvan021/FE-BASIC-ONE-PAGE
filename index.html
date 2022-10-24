@@ -10,7 +10,10 @@
         case '?admin-account':
             window.location = './Admin/Components/layout.html';
             break;
-        case '404': break;
+        case '?404': break;
+        case '?error':
+            window.location = './Client/Network/network_error.html';
+            break;
         default:
             alert('index.html client')
                 ;
