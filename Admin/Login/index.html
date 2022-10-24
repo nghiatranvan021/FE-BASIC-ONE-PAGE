@@ -163,7 +163,7 @@
                                 localStorage.setItem('accountAdmin', JSON.stringify(result));
                                 showMessage('Success', 'Sented mail successfully', 'success', 3000)
                             } else {
-                                showMessage('Errors', 'Sented mail failed', 'error', 3000)
+                                showMessage('Errors', 'Sent mail failed', 'error', 3000)
                             }
                         }
                     );
@@ -207,7 +207,7 @@
                 } else {
                     setTimeout(() => {
                         loadingButton(e, false);
-                        showMessage('Error', 'Account not found', 'error', 3000)
+                        showMessage('Error', 'Wrong login information', 'error', 3000)
                     }, 2500)
                 }
 

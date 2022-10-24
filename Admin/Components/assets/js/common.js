@@ -322,7 +322,7 @@ function handleSaveProfile(e) {
             showMessage('Success', "Save successfully,", 'success', 3000);
         }, 1000)
     } else {
-        showMessage('Error', "Something went wrong,please try againt", 'error', 3000);
+        showMessage('Error', "Something went wrong,please try again", 'error', 3000);
     }
 }
 
@@ -439,7 +439,7 @@ function handleSaveChangePassword(e) {
             showMessage('Success', "Save successfully,", 'success', 3000);
         }, 1000)
     } else {
-        showMessage('Error', "Something went wrong,please try againt", 'error', 3000);
+        showMessage('Error', "Something went wrong,please try again", 'error', 3000);
     }
 }
 
