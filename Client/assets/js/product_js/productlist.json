@@ -1,0 +1,25 @@
+{
+    "products":[
+        {
+            "type" : "men",
+            "imgURL" : "/Client/assets/images/product_image/shoes_1.png",
+            "rate" : 4,
+            "name" : "Nike Air Force 1 '07",
+            "price" : "1.500.000 đ"
+        },
+        {
+            "type" : "women",
+            "imgURL" : "/Client/assets/images/product_image/shoes_2.png",
+            "rate" : 4,
+            "name" : "Nike Air Force 2 '07",
+            "price" : "1.500.000 đ"
+        },
+        {
+            "type" : "men",
+            "imgURL" : "/Client/assets/images/product_image/shoes_3.png",
+            "rate" : 4,
+            "name" : "Nike Air Force 3 '07",
+            "price" : "1.500.000 đ"
+        }
+    ]
+}

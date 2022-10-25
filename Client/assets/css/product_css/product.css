@@ -6,10 +6,23 @@
 body{
     font-family: "Roboto";
 }
+
 .logo img{
     width: 70px;
     height: 70px;
+}
+.logo button{
+    width: 70px;
+    height: 70px;
     padding-left: 10px;
+    background: var(--main-color);
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.logo button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 header{
     display: flex;
@@ -21,9 +34,7 @@ header{
     flex:0.5;
 }
 .menu{
-    
-    margin-left: 30%;
-    margin: auto;
+   margin: auto;
 }
 .menu button{
     background: transparent;
@@ -33,6 +44,7 @@ header{
     transition: all 0.6s ease;
     font-size: 17.5px;
     margin: 5px;
+    margin-left: 20px;
     border-radius: 10px;
     width: 120px;
     height: 50px;
@@ -42,9 +54,17 @@ header{
     border: solid 1px white;
     transition: all 0.6s ease;
 }
+div.menu button.active{
+    background:white;
+    color: black;
+}
 .menu button:hover{
     background: white;
     color: black;
+}
+a{
+    color: white;
+    text-decoration: none;
 }
 .other{
     flex:1;
@@ -68,6 +88,7 @@ header{
 .other button:hover{
     transform: scale(1.5);
 }
+
 .lg-title{
     text-align: center;
     text-transform: uppercase;
@@ -87,9 +108,14 @@ header{
     border: solid black;
 }
 .product-image img{
+    box-shadow: 5px 5px black;
     width: 280px;
     height: 280px;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0rem;
+    transition: all 0.5s ease;
+}
+.product-image img:hover{
+    transform: scale(1.05);
 }
 .product{
     display: flex;
@@ -117,6 +143,8 @@ header{
     display: flex;
     justify-content: right;
     font-style: italic;
+    padding-right: 5px;
+    font-size: 20px;
 }
 .name{
     margin-top: 5px;
@@ -127,11 +155,14 @@ header{
 .product-btn{
     display: flex;
     justify-content: space-between;
+    padding-top: 10px;
 }
 .btn-buy, .btn-add{
     background: transparent;
     border: 1px solid black;
     padding: 0.8rem 0;
+    padding-left: 5px;
+    padding-right: 5px;
     cursor: pointer;
     transition: all 0.6s ease;
     font-size: 17.5px;
@@ -154,4 +185,138 @@ header{
     background:lightgreen;
     color: black;
 }
+#men{
+    display: none;
+}
 
+.cart_modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+
+}
+.cart-modal-content{
+    background-color: #fefefe;
+  margin: auto;
+
+  border: 1px solid #888;
+  width: 50%;
+}
+.close{
+    color:white;
+    padding-right: 10px;
+    padding-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  border:solid 5px black;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.close:hover, .close:focus{
+    color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.intro{
+    padding: 10px;
+    background: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.intro .title{
+    padding-left: 20px;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-right: 20px;
+    background :white;
+    float: left;
+    border-radius:5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#cart_products{
+    display: flex;
+    flex-direction: column;
+}
+.single-product{
+    display: flex;
+}
+.single-product .pr-img img{
+    flex: 1;
+    width: 100px;
+    height: 100px;
+    border: solid 2px black;
+}
+.single-product .pr-name{
+    flex:2;
+    margin-top: 40px;
+
+}
+.single-product .pr-name span{
+    font-size: 20px;
+    align-items:flex-end;
+}
+.single-product .pr-amount{
+    flex : 1;
+    margin-top: 35px;
+    
+}
+.single-product .pr-amount input{
+    
+    width: 50px;
+    font-size: 25px;
+}
+.single-product .pr-amount span{
+    font-size: 25px;
+}
+.single-product .pr-price{
+    flex: 1;
+    margin-top: 40px;
+}
+.single-product .pr-price span{
+    
+    font-size: 20px;
+    text-align: right;
+
+}
+.single-product .delete{
+    margin-top: 40px;
+}
+.single-product .delete button{
+    background: red;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3 ease;
+}
+.single-product .delete button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#payment{
+    display: flex;
+
+    justify-content: space-between;
+}
+#payment .total{
+    font-size: 25px;
+}
+#payment .pay button{
+    border: solid 3px black;
+    background: var(--main-color);
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+#payment .pay button:hover{
+    transform: scale(1.2);
+}

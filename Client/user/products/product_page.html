@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Client/assets/css/product_css/product.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script type="text/javascript" src="/Client/assets/js/product_js/product.js" defer></script>
+    <title>Products page</title>
 </head>
 <header>
 
     <div class = "logo">
-        <img src="/Client/assets/images/product_image/download.jpg" alt="">
+        <span>
+            <button onclick="location.href='product_page.html'"><img src="/Client/assets/images/product_image/download.jpg" alt=""></button>
+        </span>
     </div>
     <div class="menu">
-        <button>Nam</button>
-        <button>Nữ</button>
-        <button>Nike</button>
-        <button>Addidas</button>
-        <button>Jordan</button>
-        <button>Converse</button>
+        <button class = "tabs-item active" onclick="createOtherProduct('all',this)">Home</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('new',this)">New</a></button>
     </div>
     <div class="other">
-        <input type="text"><i class="fas fa-search"></i>
-        <button class="cart">
+        <input type="text" placeholder="Search" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
+        <button id="cart" onclick="openCart()">
             <i class="fas fa-shopping-bag"></i>
         </button>
     </div>
@@ -30,137 +33,25 @@
 <body>
     <div class = "products">
         <div class="container">
-            <h1 class = "lg-title">Sản phẩm của shop!</h1>
-            <div class = "products-layout">
-
-                <div class="product">
-                    <div class="product-content">
-                        <div class = "product-image">
-                            <img src="/Client/assets/images/product_image/shoes_1.png" alt="product image">
-                        </div>
-                        <div class = "product-btn">
-                                <button type="button" class = "btn-add">Thêm vào giỏ hàng 
-                                    <span><i class="fas fa-plus"></i></span>
-                                </button>
-                                <button type="button" class="btn-buy">Mua ngay
-                                    <span><i class="fas fa-shopping-cart"></i></span>
-                                </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class = "info-top">
-                            <div class = "type">LIFESTYLE</div>
-                            <div class="rating">
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="name">Nike Air Force 1 '07</div>
-                        <div class="price">1,500,000 đ</div>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="product-content">
-                        <div class = "product-image">
-                            <img src="/Client/assets/images/product_image/shoes_2.png" alt="product image">
-                        </div>
-                        <div class = "product-btn">
-                                <button type="button" class = "btn-add">Thêm vào giỏ hàng 
-                                    <span><i class="fas fa-plus"></i></span>
-                                </button>
-                                <button type="button" class="btn-buy">Mua ngay
-                                    <span><i class="fas fa-shopping-cart"></i></span>
-                                </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class = "info-top">
-                            <div class = "type">LIFESTYLE</div>
-                            <div class="rating">
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="name">Nike Air Force 1 '07 LV8</div>
-                        <div class="price">2,500,000 đ</div>
-                    </div>
-                </div>
-                <div class = "product">
-                    <div class="product-content">
-                        <div class = "product-image">
-                            <img src="/Client/assets/images/product_image/shoes_3.png" alt="product image">
-                        </div>
-                        <div class = "product-btn">
-                                <button type="button" class = "btn-add">Thêm vào giỏ hàng 
-                                    <span><i class="fas fa-plus"></i></span>
-                                </button>
-                                <button type="button" class="btn-buy">Mua ngay
-                                    <span><i class="fas fa-shopping-cart"></i></span>
-                                </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class = "info-top">
-                            <div class = "type">LIFESTYLE</div>
-                            <div class="rating">
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="name">Nike Air Force 1 Mid By You</div>
-                        <div class="price">5,500,000 đ</div>
-                    </div>
-                </div>
-                <div class = "product">
-                    <div class="product-content">
-                        <div class = "product-image">
-                            <img src="/Client/assets/images/product_image/shoes_3.png" alt="product image">
-                        </div>
-                        <div class = "product-btn">
-                                <button type="button" class = "btn-add">Thêm vào giỏ hàng 
-                                    <span><i class="fas fa-plus"></i></span>
-                                </button>
-                                <button type="button" class="btn-buy">Mua ngay
-                                    <span><i class="fas fa-shopping-cart"></i></span>
-                                </button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class = "info-top">
-                            <div class = "type">LIFESTYLE</div>
-                            <div class="rating">
-                                <span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="name">Nike Air Force 1 Mid By You</div>
-                        <div class="price">5,500,000 đ</div>
-                    </div>
-                </div>
+            <h1 class = "lg-title">OUR PRODUCTS!</h1>
+            <div id = 'all' class = "products-layout">
             </div>
         </div>
 
     </div>
+    <div id = "cart-info" class = "cart_modal">
+        <!-- Content -->
+        <div class = "cart-modal-content">
+            <div class = 'intro'>
+                <span class="title">Your cart!</span>
+                <span class="close">&times;</span>
+            </div>
+            <div id = "cart_products">
+            </div>
+            <div id="payment">
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
