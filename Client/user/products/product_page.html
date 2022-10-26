@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Client/assets/css/product_css/product.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script type="text/javascript" src="/Client/assets/js/product_js/product.js" defer></script>
+    <title>Products page</title>
+</head>
+<header>
+
+    <div class = "logo">
+        <span>
+            <button onclick="location.href='product_page.html'"><img src="/Client/assets/images/product_image/download.jpg" alt=""></button>
+        </span>
+    </div>
+    <div class="menu">
+        <button class = "tabs-item active" onclick="createOtherProduct('all',this)">Home</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
+        <button class = "tabs-item" onclick="createOtherProduct('new',this)">New</a></button>
+    </div>
+    <div class="other">
+        <input type="text" placeholder="Search" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
+        <button id="cart" onclick="openCart()">
+            <i class="fas fa-shopping-bag"></i>
+        </button>
+    </div>
+</header>
+<body>
+    <div class = "products">
+        <div class="container">
+            <h1 class = "lg-title">OUR PRODUCTS!</h1>
+            <div id = 'all' class = "products-layout">
+            </div>
+        </div>
+
+    </div>
+    <div id = "cart-info" class = "cart_modal">
+        <!-- Content -->
+        <div class = "cart-modal-content">
+            <div class = 'intro'>
+                <span class="title">Your cart!</span>
+                <span class="close">&times;</span>
+            </div>
+            <div id = "cart_products">
+            </div>
+            <div id="payment">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
