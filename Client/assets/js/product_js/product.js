@@ -132,6 +132,7 @@ function addProductToOrder(id) {
 function buyInCart(){
     var modal = document.getElementById('cart-info');
     modal.style.display = 'none';
+    
     if (order.length != 0)
         alert("Your transation was successful!");
     else alert("There is nothing in cart!")
