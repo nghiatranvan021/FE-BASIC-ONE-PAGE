@@ -23,16 +23,23 @@
                 <span class="visibility"> Accounts</span>
             </button>
         </li>
-
         <li onmouseover="handleHoverSibar(this)" onmouseout="handleHoverSibar(this)" id="sidebar_li-product"
             data-tool-tip-content="Products" class="sidebar_li"
             onclick="loadFileHtml('content','../Products/list');activeSideBar('#sidebar_li-product');">
             <button class="sildebar_btn sidebar_active">
                 <i class="fa-solid fa-user"></i>
 
-                <span class="visibility"> Products</span>
+                <span class="visibility">Products</span>
             </button>
         </li>
+        <li onmouseover="handleHoverSibar(this)" onmouseout="handleHoverSibar(this)" id="sidebar_li-order"
+            data-tool-tip-content="Orders" class="sidebar_li"
+            onclick="loadFileHtml('content','../Orders/list');activeSideBar('#sidebar_li-order');">
+            <button class="sildebar_btn sidebar_active">
+                <i class="fa-solid fa-user"></i>
 
+                <span class="visibility">Orders</span>
+            </button>
+        </li>
     </ul>
 </div>
