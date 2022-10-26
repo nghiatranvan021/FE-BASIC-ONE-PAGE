@@ -67,122 +67,141 @@
         <div class="process_chart">
             <div class="dashboard">
                 <div class="dashboard_header">
-                    <p>Online Store Visitors</p>
+                    <p class="title">General volatility</p>
                 </div>
-                <div class="dashboard_body">
+                <div class=" dashboard_body">
                     <div class="dashboard_body-top">
                         <p>
-                            <span>820</span>
-                            <span>Visitors Over Time</span>
+
                         </p>
                         <p>
                             <span class="dashboard_body-icon"><i class="fa-solid fa-up-long"></i>
                                 12.5%</span>
-                            <span>Since last week</span>
+                            <span></span>
                         </p>
                     </div>
-                    <div class="dashboard_body-center" style="margin:16px 0; max-width: 800px;">
+                    <div class="dashboard_body-center">
 
-                        <canvas id="myChart"
-                            style="display: block; box-sizing: border-box; height: 400px; width: 800px;"></canvas>
+                        <table id="line-chart"
+                            class="charts-css line multiple hide-data show-labels show-primary-axis show-data-axes">
+                            <caption> Line chart </caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col"> Year </th>
+                                    <th scope="col"> Progress 1 </th>
+                                    <th scope="col"> Progress 2 </th>
+                                    <th scope="col"> Progress 3 </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"> 2020 </th>
+                                    <td style="--start:0.1; --size:0.5;"><span class="data"> 50 </span></td>
+                                    <td style="--start:0; --size:0.2;"><span class="data"> 20 </span></td>
+                                    <td style="--start:0.2; --size:0.4;"><span class="data"> 40 </span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"> 2021 </th>
+                                    <td style="--start:0.5; --size:0.8;"><span class="data"> 80 </span></td>
+                                    <td style="--start:0.2; --size:0.5;"><span class="data"> 50 </span></td>
+                                    <td style="--start:0.4; --size:0.1;"><span class="data"> 10 </span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"> 2022 </th>
+                                    <td style="--start:0.8; --size:0.4;"><span class="data"> 40 </span></td>
+                                    <td style="--start:0.5; --size:0.3;"><span class="data"> 30 </span></td>
+                                    <td style="--start:0.1; --size:0.2;"><span class="data"> 20 </span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="dashboard_body-bottom">
+                    <!-- <div class="dashboard_body-bottom">
                         <span>
                             <i class="fas fa-square text-success"></i>
                             This Week</span>
                         <span><i class="fas fa-square text-gray "></i>
                             Last Week</span>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
         </div>
     </div>
-    <!-- <div class="dashboard">
+    <div class="dashboard" style="width: 99%; margin-top: 10px;">
         <div class="dashboard_header">
-            <p>Online Store Visitors</p>
+            <p class="title">Online Store Visitors</p>
         </div>
-        <div class="dashboard_body">
+        <div class=" dashboard_body">
             <div class="dashboard_body-top">
                 <p>
-                    <span>820</span>
-                    <span>Visitors Over Time</span>
+                    <!-- <span>820</span>
+                    <span>Visitors Over Time</span> -->
                 </p>
                 <p>
                     <span class="dashboard_body-icon"><i class="fa-solid fa-up-long"></i>
                         12.5%</span>
-                    <span>Since last week</span>
+                    <span>Since 2 Years ago</span>
                 </p>
             </div>
             <div class="dashboard_body-center">
 
-                <canvas id="myChart" width="400" height="400"></canvas>
+                <table id="column-chart-full"
+                    class="charts-css column show-labels multiple show-primary-axis show-data-axes datasets-spacing-10">
+                    <caption> Column chart full </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"> Year </th>
+                            <th scope="col"> Progress 1</th>
+                            <th scope="col"> Progress 2</th>
+                            <th scope="col"> Progress 3</th>
+                            <th scope="col"> Progress 4</th>
+                            <th scope="col"> Progress 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"> 2020 </th>
+                            <td style="--size:0.2;"></td>
+                            <td style="--size:0.4;"></td>
+                            <td style="--size:0.6;"></td>
+                            <td style="--size:0.8;"></td>
+                            <td style="--size:1;"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 2021 </th>
+                            <td style="--size:0.2;"></td>
+                            <td style="--size:0.5;"></td>
+                            <td style="--size:1;"></td>
+                            <td style="--size:0.7;"></td>
+                            <td style="--size:0.4;"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 2022 </th>
+                            <td style="--size:0.2;"></td>
+                            <td style="--size:0.4;"></td>
+                            <td style="--size:1;"></td>
+                            <td style="--size:0.8;"></td>
+                            <td style="--size:0.6;"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="dashboard_body-bottom">
                 <span>
-                    <i class="fas fa-square text-success"></i>
-                    This Week</span>
-                <span><i class="fas fa-square text-gray "></i>
-                    Last Week</span>
+                    <i style="color:#f66b68;" class="fas fa-square "></i>
+                    Rating products</span>
+                <span><i style="color:#8ad97b;" class="fas fa-square  "></i>
+                    Order store</span>
+                <span>
+                    <i style="color:#8ad97b;" class="fas fa-square "></i>
+                    Online Store Visitors</span>
+                <span><i style="color:#fae083;" class="fas fa-square text-gray "></i>
+                    Revenue store</span>
+                <span><i style="color:#81b7fb;" class="fas fa-square text-gray "></i>
+                    Cost store</span>
             </div>
         </div>
 
-    </div> -->
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <script>
-        const canvas = document.querySelector('#myChart');
-        canvas.setAttribute('width', 1600);
-        canvas.setAttribute('height', 900);
-        document.addEventListener('DOMContentLoaded', () => {
-
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Red1', 'Blue1', 'Yellow1', 'Green1', 'Purple1', 'Orange1'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        })
-    </script>
 </div>

@@ -500,6 +500,9 @@ function createAdminAccount() {
     }
     ];
     localStorage.setItem('accountAdmin', JSON.stringify(data));
+
+}
+function fakerDataAccount() {
     const accounts = [
         {
             id: 1,
@@ -534,5 +537,14 @@ function createAdminAccount() {
     ];
     localStorage.setItem('accounts', JSON.stringify(accounts));
 }
+function fakerDataOne() {
+    const localDataAdmin = localStorage.getItem('accountAdmin');
+    const localDataAccount = localStorage.getItem('accounts');
+    if (!localDataAdmin) {
+        createAdminAccount()
+    } if (!localDataAccount) {
+        fakerDataAccount();
+    }
+}
+fakerDataOne();
 
-// createAdminAccount()
