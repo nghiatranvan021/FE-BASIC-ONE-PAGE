@@ -1,1 +1,60 @@
-<p>list_san pham</p>
+<div class="product">
+    <p class="title">List Products</p>
+    <div class="product_action">
+        <div class="product_action-search">
+            <input type="search" id="product_search" placeholder="Seach...">
+        </div>
+        <div class="product_action-add">
+            <button onclick="loadFileHtml('content', '../Products/add')">Create <i
+                    class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+    <table class="account_table">
+        <thead>
+            <tr>
+                <th percent="1">
+                    Stt
+                </th>
+                <th percent="2">Name</th>
+                <th percent="2">Image</th>
+                <th percent="1">Quantity</th>
+                <th percent="1">Price</th>
+                <th percent="1">Size</th>
+                <th percent="2">action</th>
+            <tr>
+        </thead>
+        <tbody id="account_tbody">
+            <tr>
+                <th>1</th>
+                <td>Test</td>
+                <td><a href="https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png"><img target="_blank"
+                            class="product_img" src="https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png"
+                            alt="image"></a></td>
+                <td>2</td>
+                <td>23.000</td>
+                <td>M</td>
+                <td>
+                    <button class="product_action-btn bg-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Test</td>
+                <td>
+                    <a href="https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png"><img target="_blank"
+                            class="product_img" src="https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png"
+                            alt="image"></a>
+                </td>
+                <td>2</td>
+                <td>23.000</td>
+                <td>M</td>
+                <td>
+                    <button class="product_action-btn bg-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
