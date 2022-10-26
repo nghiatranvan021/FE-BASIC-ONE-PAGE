@@ -74,6 +74,7 @@ function toast({
         const icons = {
             success: "fa fa-check-circle",
             error: "fa fa-times-circle",
+            info: "fa fa-info-circle",
         };
         // auto close
         const autoClose = setTimeout(function () {
@@ -202,15 +203,15 @@ function handleModalprofile() {
         <div class="user_contact-right">
             <p class="user_contact-title">Link different accounts</p>
             <div class="user_attach">
-                <button type="button" class="user_attach-group facebook">
+                <button onclick="todo()" type="button" class="user_attach-group facebook">
                     <i class="fa-brands fa-facebook"></i>
                     <p>FaceBook</p>
                 </button>
-                <button type="button" class="user_attach-group google">
+                <button onclick="todo()" type="button" class="user_attach-group google">
                     <i class="fa-brands fa-google"></i>
                     <p>google</p>
                 </button>
-                <button type="button" class="user_attach-group tiktok">
+                <button onclick="todo()" type="button" class="user_attach-group tiktok">
                     <i class="fa-brands fa-tiktok"></i>
                     <p>tiktok</p>
                 </button>
@@ -232,7 +233,7 @@ function handleModalprofile() {
 
                             Once you click "Delete My Profile", we send you a confirmation email.
 
-                            <button> Delete My Profile</button>
+                            <button onclick="todo()"> Delete My Profile</button>
                         </p>
                         <p class="user_delete-text"> <b>Note:</b> If you want to delete your account, go to Account Settings.
 
@@ -443,6 +444,10 @@ function handleSaveChangePassword(e) {
     }
 }
 
+// Todo
+function todo() {
+    showMessage('Info', 'This feature is not in development yet.', 'info', 3000);
+}
 // listen network 
 
 // const checkOnlineStatus = async () => {

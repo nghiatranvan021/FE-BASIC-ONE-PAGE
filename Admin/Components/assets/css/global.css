@@ -8,6 +8,7 @@
     --height-header: 60px;
     --height-content: 60px;
     --width-sidebar: 12%;
+    --color-primary-linner: linear-gradient(138.19deg, #003084 4.98%, #0294D7 100%);
 }
 
 body {
@@ -131,7 +132,7 @@ body {
 #content {
     background: #d3d2d2;
     padding: 20px 0 0 20px;
-
+    overflow-y: scroll;
     height: calc(100vh - var(--height-header));
 }
 
@@ -295,6 +296,14 @@ body {
 
 .toast--message-error .message__icon {
     color: #dc3545;
+}
+
+.toast--message-info {
+    border-color: #2f65f5;
+}
+
+.toast--message-info .message__icon {
+    color: #2f65f5;
 }
 
 .toast__message-custom {

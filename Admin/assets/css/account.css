@@ -255,11 +255,15 @@ input:checked+.slider:before {
 }
 
 .action_search {
-    padding: 5px;
+    padding: 5px 0;
     height: 30px;
     border-radius: 4px;
     border: none;
     width: 50%;
     bottom: 0;
 
+}
+
+.action_search input {
+    padding: 0 5px;
 }
