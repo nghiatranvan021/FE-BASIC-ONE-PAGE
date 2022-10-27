@@ -57,7 +57,7 @@ function createProducts(products) {
     <div class="product">
     <div class="product-content">
         <div class = "product-image">
-            <img src="${item.img}" alt="product image">
+            <img src="${item.img}" alt="product image" onclick = "showDetail(${item.id})">
         </div>
         <div class = "product-btn">
                 <button type="button" class = "btn-add" onclick="addProductToOrder(${item.id})">ADD TO CART 
@@ -129,22 +129,18 @@ function addProductToOrder(id) {
     console.log(order);
     alert("Added to cart!");
 }
-function buyInCart(){
-    var modal = document.getElementById('cart-info');
-    modal.style.display = 'none';
-    
-    if (order.length != 0)
-        alert("Your transation was successful!");
-    else alert("There is nothing in cart!")
-}
 function BuyNow(id){
     id = parseInt(id);
-    let item = products.filter((value) => value.id === id);
+    let item = products.filter((value) => value.id === id)
+
+    order.push(item[0]);
 
     var modal = document.getElementById('cart-info');
     var span = document.getElementsByClassName('close')[0];
 
     var buy_item = item[0];
+    console.log(item[0]);
+    console.log(order);
     modal.style.display = 'block';
 
     span.onclick = function(){
@@ -185,7 +181,19 @@ function BuyNow(id){
         <span><hr></span>
         <button onclick="buyInCart()">BUY</button>
     </div>`;
+    
 }
+function buyInCart(){
+    var modal = document.getElementById('cart-info');
+    modal.style.display = 'none';
+    
+    if (order.length != 0){
+        alert("Your transation was successful!");
+        order=[];
+    }
+    else alert("There is nothing in cart!")
+}
+
 
 // cart button
 function openCart(){
@@ -259,4 +267,60 @@ function deleteProduct(id){
     openCart();
 }
 
+function getRate(rate){
+    rate = parseInt(rate);
+
+    var s = ""
+    for (var i = 0;i<rate;i++)
+        s += "<span class='fa fa-star'></span>";
+    return s;
+}
+function showDetail(id){
+    id = parseInt(id);
+    let item = products.filter((value) => value.id === id)
+
+    var selected = item[0];
+    var s = getRate(selected.rate);
+    var detail = document.getElementById('detail-info');
+    detail.style.display = 'block';
+    detail.innerHTML = "";
+    detail.innerHTML+=`<div id="detail-content">
+    <div id="close-detail" onclick = "closeDetail()">&times;</div>
+    <div class = "detail-img">
+        <img src="${selected.img}" alt="">
+    </div>
+    <div class = "detail-text">
+        <div class="detail-name">
+            ${selected.name}
+            <hr>
+        </div>
+        <div class="detail-rate">
+        ${selected.rate}
+        ${s}
+        </div>
+        <div class = "detail-price">
+            ${selected.price} VND
+        </div>
+        <div class = "detail-title">
+            About this product
+            <div class = "description">
+                <p>awhdiahsihoasiuhdauihancasnijaowjdj</p>
+            </div>
+        </div>
+        <div class="more-detail">
+            <span>Color: </span>
+            <span>Shipping area: Ho Chi Minh city</span>
+            <span>Shipping fee: free</span>
+        </div>
+    </div>
+</div>`
+    console.log(selected);
+    
+}
+function closeDetail(){
+    
+    var detail = document.getElementById('detail-info');
+    detail.style.display = 'none';
+    console.log("click");
+}
 

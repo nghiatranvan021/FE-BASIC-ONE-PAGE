@@ -3,9 +3,9 @@
 :root{
     --main-color : #87a96b;
 }
-body{
+/* body{
     font-family: "Roboto";
-}
+} */
 
 .logo img{
     width: 70px;
@@ -185,9 +185,7 @@ a{
     background:lightgreen;
     color: black;
 }
-#men{
-    display: none;
-}
+
 
 .cart_modal{
     display: none; 
@@ -320,3 +318,96 @@ a{
 #payment .pay button:hover{
     transform: scale(1.2);
 }
+#detail-info{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+#detail-content{
+    display: flex;
+    flex-direction: row;
+}
+.detail-img img{
+    width: 500px;
+    height:500px;
+    margin-left: 250px;
+    border-right: solid black 5px ;
+}
+.detail-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: white;
+    height: 500px;
+    width: 500px;
+}
+.detail-name{
+    text-transform: uppercase;
+    font-size: 35px;
+}
+.detail-rate{
+    color: var(--main-color);
+    font-size: 25px;
+    
+}
+.detail-price{
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+.detail-title {
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+.description{
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    padding-bottom: 10px;
+    
+    word-wrap: break-word;
+}
+.more-detail{
+    display: flex;
+    flex-direction: column;
+}
+.more-detail span{
+    background: var(--main-color);
+    border: solid black 2px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+#close-detail{
+    position: absolute;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    top : 100px;
+    left: 250px;
+    background:red;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: all 0.2s ease;
+}
+#close-detail:hover{
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
