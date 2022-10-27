@@ -39,9 +39,9 @@
         <div class="login_contact">
             <div class="login_contact_modal">
                 <img src="../assets/images/Art-work.png" alt="Art-work">
-            </div>
+            </div>2
 
-            <div class="login_coppyright" style="overflow: hidden; width: 50px; height: 50px;">
+            <div class="login_coppyright">
                 <p>Copyright @ web1.vn Term of use • Privacy policy • Help center</p>
 
             </div>
@@ -123,6 +123,13 @@
                 loadingButton(e, true);
                 const accounts = JSON.parse(localStorage.getItem('accountAdmin'));
                 let isCheck = false;
+                if (!accounts) {
+                    setTimeout(() => {
+                        loadingButton(e, false);
+                        showMessage('Error', 'Account not found', 'error', 3000)
+                    }, 2000)
+                    return;
+                }
                 const subject = 'Forgot Password';
                 let userForgot = {};
                 accounts.filter((account) => {

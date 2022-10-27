@@ -487,7 +487,7 @@ function createAdminAccount() {
         id: 2,
         first_name: 'Trần',
         last_name: 'Phú',
-        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky0T_T7sQthAfYdUku6mgYetEg6NPQvmTVXn1qIs=s64-c-mo',
         role: 'admin',
         gender: 'male',
         status: true,
