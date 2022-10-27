@@ -133,7 +133,7 @@ function loadingButton(e, isShow = true) {
 }
 function handleHoverSibar(e) {
     const sideBar = document.getElementById('sidebar');
-    if (sideBar.offsetWidth <= Math.round(screen.width * 0.04)) {
+    if (sideBar.offsetWidth <= Math.round(screen.width * 0.045)) {
         if (e.hasAttribute('data-tool-tip')) {
             e.removeAttribute('data-tool-tip');
         } else {
@@ -494,6 +494,50 @@ function createAdminAccount() {
         address: 'Hồ Chí Minh',
         email: 'tranphu26092001@gmail.com',
         phone: '0945251832',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    },
+    {
+        id: 3,
+        first_name: 'Đặng',
+        last_name: 'Kiệt',
+        avatar: 'https://i.ibb.co/kMJMgwg/K.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'Kietdang1608@gmail.com',
+        phone: '1234567890',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    }, {
+        id: 4,
+        first_name: 'Huỳnh',
+        last_name: 'Gia',
+        avatar: 'https://i.ibb.co/c6cHcrx/G.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'duonghuynhgialop9a9@gmail.com',
+        phone: '1234567890',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    },
+    {
+        id: 5,
+        first_name: 'Lê',
+        last_name: 'Vỹ',
+        avatar: 'https://i.ibb.co/7W5Xk3F/V.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'levyuri1603@gmail.com',
+        phone: '1234567890',
         password: btoa('123456'),
         created_at: new Date().toLocaleDateString('en-US'),
         updated_at: new Date().toLocaleDateString('en-US'),
