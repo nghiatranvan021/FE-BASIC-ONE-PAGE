@@ -133,7 +133,7 @@ function loadingButton(e, isShow = true) {
 }
 function handleHoverSibar(e) {
     const sideBar = document.getElementById('sidebar');
-    if (sideBar.offsetWidth <= Math.round(screen.width * 0.04)) {
+    if (sideBar.offsetWidth <= Math.round(screen.width * 0.045)) {
         if (e.hasAttribute('data-tool-tip')) {
             e.removeAttribute('data-tool-tip');
         } else {
@@ -468,7 +468,7 @@ function todo() {
 
 // wraning trick admin
 function createAdminAccount() {
-    const data = [{
+    const dataFaker = [{
         id: 1,
         first_name: 'Trần',
         last_name: 'Nghĩa',
@@ -487,7 +487,7 @@ function createAdminAccount() {
         id: 2,
         first_name: 'Trần',
         last_name: 'Phú',
-        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky1UoCicCIhbT7HviuSTX3Y_QcEMGes-0l1k7Hqq=s64-c-mo',
+        avatar: 'https://lh3.googleusercontent.com/ogw/AOh-ky0T_T7sQthAfYdUku6mgYetEg6NPQvmTVXn1qIs=s64-c-mo',
         role: 'admin',
         gender: 'male',
         status: true,
@@ -497,13 +497,57 @@ function createAdminAccount() {
         password: btoa('123456'),
         created_at: new Date().toLocaleDateString('en-US'),
         updated_at: new Date().toLocaleDateString('en-US'),
+    },
+    {
+        id: 3,
+        first_name: 'Đặng',
+        last_name: 'Kiệt',
+        avatar: 'https://i.ibb.co/kMJMgwg/K.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'Kietdang1608@gmail.com',
+        phone: '1234567890',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    }, {
+        id: 4,
+        first_name: 'Huỳnh',
+        last_name: 'Gia',
+        avatar: 'https://i.ibb.co/c6cHcrx/G.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'duonghuynhgialop9a9@gmail.com',
+        phone: '1234567890',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
+    },
+    {
+        id: 5,
+        first_name: 'Lê',
+        last_name: 'Vỹ',
+        avatar: 'https://i.ibb.co/7W5Xk3F/V.png',
+        role: 'admin',
+        gender: 'male',
+        status: true,
+        address: 'Hồ Chí Minh',
+        email: 'levyuri1603@gmail.com',
+        phone: '1234567890',
+        password: btoa('123456'),
+        created_at: new Date().toLocaleDateString('en-US'),
+        updated_at: new Date().toLocaleDateString('en-US'),
     }
     ];
-    localStorage.setItem('accountAdmin', JSON.stringify(data));
+    localStorage.setItem('accountAdmin', JSON.stringify(dataFaker));
 
 }
 function fakerDataAccount() {
-    const accounts = [
+    const accountsFaker = [
         {
             id: 1,
             first_name: 'Trần',
@@ -535,7 +579,149 @@ function fakerDataAccount() {
             updated_at: new Date().toLocaleDateString('en-US'),
         },
     ];
-    localStorage.setItem('accounts', JSON.stringify(accounts));
+    localStorage.setItem('accounts', JSON.stringify(accountsFaker));
+
+    // product
+
+    const productsFaker = [
+        {
+            id: 1,
+            name: 'giày thể thao',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 2000000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            name: 'giày thể thao nam',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 5,
+            price: 400000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 3,
+            name: 'giày thể thao nu',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 300000,
+            size: 'S',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 4,
+            name: 'giày',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 4,
+            price: 67000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    localStorage.setItem('products', JSON.stringify(productsFaker));
+    const orderFaker = [
+        {
+            id: 1,
+            userId: 1,
+            last_name: 'trần',
+            first_name: 'nghĩa',
+            quantity: 30,
+            total: 34000,
+            status: 'pending',
+            created_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            userId: 1,
+            last_name: 'trần',
+            first_name: 'nghĩa',
+            quantity: 30,
+            total: 34000,
+            status: 'pending',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }
+        , {
+            id: 3,
+            userId: 2,
+            last_name: 'trần',
+            first_name: 'Phu',
+            quantity: 30,
+            total: 33000,
+            status: 'cancel',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }, {
+            id: 4,
+            userId: 2,
+            last_name: 'trần',
+            first_name: 'Phu',
+            quantity: 30,
+            total: 34000,
+            status: 'approved',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    localStorage.setItem('orders', JSON.stringify(orderFaker));
+    const cartUserFaker = [
+        {
+            id: 1,
+            name: 'giày thể thao',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 2000000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            name: 'giày thể thao nam',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 5,
+            price: 400000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 3,
+            name: 'giày thể thao nu',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 300000,
+            size: 'S',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 4,
+            name: 'giày',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 4,
+            price: 67000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    for (let i = 1; i < 5; i++) {
+
+        localStorage.setItem('cartUser_' + i, JSON.stringify(cartUserFaker));
+    }
 }
 function fakerDataOne() {
     const localDataAdmin = localStorage.getItem('accountAdmin');

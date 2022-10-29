@@ -9,9 +9,11 @@
     box-shadow: 1px 2px 2px #ccc;
     padding: 10px;
 }
-.dashboard+.dashboard{
+
+.dashboard+.dashboard {
     margin-top: 10px;
 }
+
 .dashboard_header {
     height: 10%;
     align-items: center;
@@ -68,11 +70,12 @@
     background-color: #f6f6f6;
 }
 
-#column-chart-full{
+#column-chart-full {
     height: 200px;
-   width: 100%;
+    width: 100%;
     margin: 0 auto;
-  }
+}
+
 .dashboard_body-bottom {
     height: 5%;
     display: flex;
@@ -98,7 +101,7 @@
     justify-content: space-between;
     height: 150px;
     width: 100%;
-    padding: 10px 10px 10px 0;
+    padding: 10px 15px 10px 0;
 }
 
 .dashboard_header_number-box {
