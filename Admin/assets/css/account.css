@@ -39,23 +39,28 @@ tbody tr:nth-child(even) {
     background-color: #eee;
 }
 
-th[percent='1'] {
+th[percent='1'],
+td[percent='1'] {
     width: 5%;
 }
 
-th[percent='2'] {
+th[percent='2'],
+td[percent='2'] {
     width: 10%;
 }
 
-th[percent='3'] {
+th[percent='3'],
+td[percent='3'] {
     width: 15%;
 }
 
-th[percent='4'] {
+th[percent='4'],
+td[percent='4'] {
     width: 20%;
 }
 
-th[percent='5'] {
+th[percent='5'],
+td[percent='5'] {
     width: 25%;
 }
 

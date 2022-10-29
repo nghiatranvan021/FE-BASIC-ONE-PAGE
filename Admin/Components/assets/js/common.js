@@ -468,7 +468,7 @@ function todo() {
 
 // wraning trick admin
 function createAdminAccount() {
-    const data = [{
+    const dataFaker = [{
         id: 1,
         first_name: 'Trần',
         last_name: 'Nghĩa',
@@ -499,11 +499,11 @@ function createAdminAccount() {
         updated_at: new Date().toLocaleDateString('en-US'),
     }
     ];
-    localStorage.setItem('accountAdmin', JSON.stringify(data));
+    localStorage.setItem('accountAdmin', JSON.stringify(dataFaker));
 
 }
 function fakerDataAccount() {
-    const accounts = [
+    const accountsFaker = [
         {
             id: 1,
             first_name: 'Trần',
@@ -535,7 +535,149 @@ function fakerDataAccount() {
             updated_at: new Date().toLocaleDateString('en-US'),
         },
     ];
-    localStorage.setItem('accounts', JSON.stringify(accounts));
+    localStorage.setItem('accounts', JSON.stringify(accountsFaker));
+
+    // product
+
+    const productsFaker = [
+        {
+            id: 1,
+            name: 'giày thể thao',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 2000000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            name: 'giày thể thao nam',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 5,
+            price: 400000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 3,
+            name: 'giày thể thao nu',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 300000,
+            size: 'S',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 4,
+            name: 'giày',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 4,
+            price: 67000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    localStorage.setItem('products', JSON.stringify(productsFaker));
+    const orderFaker = [
+        {
+            id: 1,
+            userId: 1,
+            last_name: 'trần',
+            first_name: 'nghĩa',
+            quantity: 30,
+            total: 34000,
+            status: 'pending',
+            created_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            userId: 1,
+            last_name: 'trần',
+            first_name: 'nghĩa',
+            quantity: 30,
+            total: 34000,
+            status: 'pending',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }
+        , {
+            id: 3,
+            userId: 2,
+            last_name: 'trần',
+            first_name: 'Phu',
+            quantity: 30,
+            total: 33000,
+            status: 'cancel',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }, {
+            id: 4,
+            userId: 2,
+            last_name: 'trần',
+            first_name: 'Phu',
+            quantity: 30,
+            total: 34000,
+            status: 'approved',
+            created_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    localStorage.setItem('orders', JSON.stringify(orderFaker));
+    const cartUserFaker = [
+        {
+            id: 1,
+            name: 'giày thể thao',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 2000000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 2,
+            name: 'giày thể thao nam',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 5,
+            price: 400000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 3,
+            name: 'giày thể thao nu',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 300000,
+            size: 'S',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 4,
+            name: 'giày',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 4,
+            price: 67000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        }
+    ];
+    for (let i = 1; i < 5; i++) {
+
+        localStorage.setItem('cartUser_' + i, JSON.stringify(cartUserFaker));
+    }
 }
 function fakerDataOne() {
     const localDataAdmin = localStorage.getItem('accountAdmin');
