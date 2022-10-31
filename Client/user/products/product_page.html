@@ -6,38 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Client/assets/css/product_css/product.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="/Client/assets/css/style.css">
     <script type="text/javascript" src="/Client/assets/js/product_js/product.js" defer></script>
     <title>Products page</title>
 </head>
 <div class="head">
 
-    <div class = "logo">
+    <div class = "logo_product">
         <span>
             <button onclick="location.href='product_page.html'"><img src="/Client/assets/images/product_image/download.jpg" alt=""></button>
         </span>
     </div>
     <div class="menu">
-        <button class = "tabs-item active" onclick="createOtherProduct('all',this)">Home</a></button>
+        <button class = "tabs-item active" onclick="createOtherProduct('all',this)">All</a></button>
         <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
         <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
         <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
-        <button class = "tabs-item" onclick="createOtherProduct('new',this)">New</a></button>
     </div>
     <div class="other">
-        <input type="text" placeholder="Search" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
+        <input type="text" placeholder="Search...(lowercase)" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
         <button id="cart" onclick="openCart()">
             <i class="fas fa-shopping-bag"></i>
         </button>
     </div>
 </div>
-<body>
+<body background="/Client/assets/images/product_image/bg.png">
     <div class = "products">
         <div class="container">
             <h1 class = "lg-title">OUR PRODUCTS!</h1>
             <div id = 'all' class = "products-layout">
             </div>
         </div>
-
     </div>
     <div id = "cart-info" class = "cart_modal">
         <!-- Content -->
@@ -53,35 +52,6 @@
         </div>
     </div>
     <div id = "detail-info">
-        <!-- <div id="detail-content">
-            <div id="close-detail" onclick = "closeDetail()">&times;</div>
-            <div class = "detail-img">
-                <img src="/Client/assets/images/product_image/shoes_1.png" alt="">
-            </div>
-            <div class = "detail-text">
-                <div class="detail-name">
-                    abc
-                    <hr>
-                </div>
-                <div class="detail-rate">
-                    123
-                </div>
-                <div class = "detail-price">
-                    123
-                </div>
-                <div class = "detail-title">
-                    abc
-                    <div class = "description">
-                        <p>awhdiahsihoasiuhdauihancasnijaowjdj</p>
-                    </div>
-                </div>
-                <div class="more-detail">
-                    <span>Color: </span>
-                    <span>Shipping area: Ho Chi Minh city</span>
-                    <span>Shipping fee: free</span>
-                </div>
-            </div>
-        </div> -->
     </div>
 </body>
 </html>
