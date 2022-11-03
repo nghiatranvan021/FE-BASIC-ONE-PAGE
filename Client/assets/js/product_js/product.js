@@ -271,11 +271,29 @@ let products = [{
     color :'black-white',
     des:'Simple Vans shoes'
 },]
-console.log((2500).toLocaleString('en-US', {
-    style:'currency',
-    currency: 'VND',
-}))
 
+//push data to localstorage
+
+localStorage.setItem("lst_products",JSON.stringify(products));
+
+//show notice
+function showNotice(s){
+    var pos = document.getElementById("notice");
+    pos.style.display = 'block';
+    pos.innerHTML = "";
+    pos.innerHTML += `
+    <div class="notice-title">NOTIFICATION <i class = "fa fa-bell"></i></div>
+    <div class ="notice-content">
+        <p>${s}</p>
+    </div>`;
+    window.onclick = function(event){
+        if (event.target == pos){
+            pos.style.display = 'none';
+        }
+    }
+    
+}
+//convert to currency
 function toCurrency(price){
     var s = "";
     s = price.toLocaleString('en-US', {
@@ -380,27 +398,27 @@ function createOtherProduct(type,element) {
     }
 }
 //add to order list
-let order = []
+let order = [];
+let bought = [];
 function addProductToOrder(id) {
     id = parseInt(id);
     let items = products.filter((value) => value.id === id)
-
     order.push(items[0]);
-    console.log(order);
-    alert("Added to cart!");
+    var symbol = "<i class = 'fa fa-check'></i>";
+    showNotice("Added to cart " + symbol);
+    localStorage.setItem("orders",JSON.stringify(order))
 }
+
 function BuyNow(id){
     id = parseInt(id);
     let item = products.filter((value) => value.id === id)
 
     order.push(item[0]);
-
     var modal = document.getElementById('cart-info');
     var span = document.getElementsByClassName('close')[0];
 
     var buy_item = item[0];
-    console.log(item[0]);
-    console.log(order);
+    
     modal.style.display = 'block';
 
     span.onclick = function(){
@@ -435,7 +453,7 @@ function BuyNow(id){
     pay.innerHTML += `
     <div class="total">
         <span><hr></span>
-        <span>Total: ${buy_item.price} VND</span>
+        <span>Total: ${toCurrency(buy_item)} VND</span>
     </div>
     <div class="pay">
         <span><hr></span>
@@ -443,15 +461,22 @@ function BuyNow(id){
     </div>`;
     
 }
+
+
 function buyInCart(){
     var modal = document.getElementById('cart-info');
     modal.style.display = 'none';
     
     if (order.length != 0){
-        alert("Your transation was successful!");
-        order=[];
+        showNotice("Your transaction was successful! &#10003;");
+        bought = bought.concat(order);
+        localStorage.setItem("bought_products",JSON.stringify(bought));
+        order = [];
+        localStorage.removeItem("orders");
+        
     }
-    else alert("There is nothing in cart!")
+    else alert("There is nothing in cart!");
+    
 }
 
 
@@ -470,7 +495,6 @@ function openCart(){
         }
     }
     let elems = document.getElementById('cart_products');
-
     elems.innerHTML = "";
     for (let i = 0;i < order.length;i++){
         const item = order[i];
@@ -487,7 +511,7 @@ function openCart(){
                 <input type="number" class ="amount" min = '30' max="50" value="40">
             </div>
             <div class = "pr-price">
-                <span>${item.price} VND</span>
+                <span>${toCurrency(item.price)} VND</span>
             </div>
             <div class = "delete">
                 <button type="button" onclick = "deleteProduct(${item.id})">&times;</button>
@@ -496,7 +520,7 @@ function openCart(){
         
     }
     //Sum the products
-    var sum = 0;
+    sum = 0;
     for (var i = 0; i<order.length;i++){
         const item = order[i];
         sum += item.price;
@@ -506,7 +530,7 @@ function openCart(){
     pay.innerHTML += `
     <div class="total">
         <span><hr></span>
-        <span>Total: ${sum} VND</span>
+        <span>Total: ${toCurrency(sum)} VND</span>
     </div>
     <div class="pay">
         <span><hr></span>
@@ -523,16 +547,16 @@ function deleteProduct(id){
 
     var ind = order.indexOf(items[0]);
     order.splice(ind,1);
-    console.log(order);
+    localStorage.setItem("orders",JSON.stringify(order));
     openCart();
 }
 
 function getRate(rate){
+    var rate0 = rate;
     rate = parseInt(rate);
-    var s = ""
+    var s = "";
     for (var i = 0;i<rate;i++)
-        s += "<span class='fa fa-star'></span>";
-    
+        s += "<span ><i class='fa fa-star'></i></span>";
     return s;
 }
 function showDetail(id){
@@ -574,14 +598,13 @@ function showDetail(id){
         </div>
     </div>
 </div>`
-    console.log(selected);
     
 }
 function closeDetail(){
     
     var detail = document.getElementById('detail-info');
     detail.style.display = 'none';
-    console.log("click");
+
 }
 
 
