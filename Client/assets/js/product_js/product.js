@@ -2,7 +2,7 @@
 let i = 0
 let products = [{
     id: 1,
-    img: "/Client/assets/images/product_image/shoes_1.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_1.png",
     name: "Nike Air Force 1 '07",
     price: 1500000,
     productType: "WOMEN",
@@ -12,7 +12,7 @@ let products = [{
 },
 {
     id: 2,
-    img: "/Client/assets/images/product_image/shoes_2.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_2.png",
     name: "Nike Air Force 1 '07 LV8",
     price: 2500000,
     productType: "MEN",
@@ -22,7 +22,7 @@ let products = [{
 },
 {
     id: 3,
-    img: "/Client/assets/images/product_image/shoes_3.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_3.png",
     name: "Nike Air Force 1 Mid By You",
     price: 2500000,
     productType: "MEN",
@@ -32,7 +32,7 @@ let products = [{
 },
 {
     id: 4,
-    img: "/Client/assets/images/product_image/shoes_7.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_7.png",
     name: "Nike Zoom Fly 5",
     price: 4690000,
     productType: "MEN",
@@ -42,7 +42,7 @@ let products = [{
 },
 {
     id: 5,
-    img: "/Client/assets/images/product_image/shoes_11.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_11.png",
     name: "Nike Offcourt",
     price: 1000000,
     productType: "MEN",
@@ -52,7 +52,7 @@ let products = [{
 },
 {
     id: 6,
-    img: "/Client/assets/images/product_image/shoes_12.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_12.png",
     name: "Nike Metcon 8 MF",
     price: 4000000,
     productType: "MEN",
@@ -62,7 +62,7 @@ let products = [{
 },
 {
     id: 7,
-    img: "/Client/assets/images/product_image/shoes_13.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_13.png",
     name: "Nike Air Force 1 '07 Next Nature",
     price: 3000000,
     productType: "WOMEN",
@@ -73,7 +73,7 @@ let products = [{
 ,
 {
     id: 8,
-    img: "/Client/assets/images/product_image/shoes_14.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_14.png",
     name: "Adidas Forum Low HQ1487",
     price: 2500000,
     productType: "WOMEN",
@@ -83,7 +83,7 @@ let products = [{
 },
 {
     id: 9,
-    img: "/Client/assets/images/product_image/shoes_15.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_15.png",
     name: "Puma Skye Clean",
     price: 1600000,
     productType: "WOMEN",
@@ -93,7 +93,7 @@ let products = [{
 },
 {
     id: 10,
-    img: "/Client/assets/images/product_image/shoes_16.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_16.png",
     name: "Nike Air Jordan 1 Mid",
     price: 6500000,
     productType: "WOMEN",
@@ -103,7 +103,7 @@ let products = [{
 },
 {
     id: 11,
-    img: "/Client/assets/images/product_image/shoes_17.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_17.png",
     name: "Adidas Team Court",
     price: 650000,
     productType: "UNISEX",
@@ -113,7 +113,7 @@ let products = [{
 },
 {
     id: 12,
-    img: "/Client/assets/images/product_image/shoes_18.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_18.png",
     name: "Nike Air Force 1 Shadow",
     price: 3650000,
     productType: "UNISEX",
@@ -123,7 +123,7 @@ let products = [{
 },
 {
     id: 13,
-    img: "/Client/assets/images/product_image/shoes_19.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_19.png",
     name: "New York Yankees Bigball Classic",
     price: 2650000,
     productType: "UNISEX",
@@ -133,7 +133,7 @@ let products = [{
 },
 {
     id: 14,
-    img: "/Client/assets/images/product_image/shoes_20.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_20.png",
     name: "Adidas Ultraboost 22",
     price: 3950000,
     productType: "UNISEX",
@@ -143,7 +143,7 @@ let products = [{
 },
 {
     id: 15,
-    img: "/Client/assets/images/product_image/shoes_21.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_21.png",
     name: "Adidas 4D FWD PULSE GX2985",
     price: 2200000,
     productType: "WOMEN",
@@ -153,7 +153,7 @@ let products = [{
 },
 {
     id: 16,
-    img: "/Client/assets/images/product_image/shoes_17.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_17.png",
     name: "Adidas Team Court",
     price: 650000,
     productType: "UNISEX",
@@ -163,7 +163,7 @@ let products = [{
 },
 {
     id: 17,
-    img: "/Client/assets/images/product_image/shoes_22.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_22.png",
     name: "Puma Skye Clean Black",
     price: 1990000,
     productType: "WOMEN",
@@ -173,7 +173,7 @@ let products = [{
 },
 {
     id: 18,
-    img: "/Client/assets/images/product_image/shoes_23.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_23.png",
     name: "Adidas NMD R1 J Clear",
     price: 2100000,
     productType: "WOMEN",
@@ -183,7 +183,7 @@ let products = [{
 },
 {
     id: 19,
-    img: "/Client/assets/images/product_image/shoes_24.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_24.png",
     name: "Charles & Keith Tweed Slip-on",
     price: 500000,
     productType: "WOMEN",
@@ -193,7 +193,7 @@ let products = [{
 },
 {
     id: 20,
-    img: "/Client/assets/images/product_image/shoes_25.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_25.png",
     name: "Lacoste Gripshot Leather 222",
     price: 2400000,
     productType: "MEN",
@@ -203,7 +203,7 @@ let products = [{
 },
 {
     id: 21,
-    img: "/Client/assets/images/product_image/shoes_26.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_26.png",
     name: "Adidas ULTRA4D Hurricane",
     price: 4000000,
     productType: "MEN",
@@ -213,7 +213,7 @@ let products = [{
 },
 {
     id: 22,
-    img: "/Client/assets/images/product_image/shoes_27.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_27.png",
     name: "Nike Air Max Genome White",
     price: 5500000,
     productType: "MEN",
@@ -223,7 +223,7 @@ let products = [{
 },
 {
     id: 23,
-    img: "/Client/assets/images/product_image/shoes_28.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_28.png",
     name: "Nike Renew Run 2",
     price: 1800000,
     productType: "MEN",
@@ -233,7 +233,7 @@ let products = [{
 },
 {
     id: 24,
-    img: "/Client/assets/images/product_image/shoes_29.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_29.png",
     name: "Adidas Duramo SL",
     price: 1480000,
     productType: "UNISEX",
@@ -243,7 +243,7 @@ let products = [{
 },
 {
     id: 25,
-    img: "/Client/assets/images/product_image/shoes_30.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_30.png",
     name: "Nike Air Force 1 Unlock By You",
     price: 3950000,
     productType: "UNISEX",
@@ -253,7 +253,7 @@ let products = [{
 },
 {
     id: 26,
-    img: "/Client/assets/images/product_image/shoes_31.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_31.png",
     name: "Nike Jordan 1 Low Bred Toe",
     price: 4500000,
     productType: "UNISEX",
@@ -263,7 +263,7 @@ let products = [{
 },
 {
     id: 27,
-    img: "/Client/assets/images/product_image/shoes_32.png",
+    img: "/Web1/Client/assets/images/product_image/shoes_32.png",
     name: "Vans Era",
     price: 1550000,
     productType: "UNISEX",
