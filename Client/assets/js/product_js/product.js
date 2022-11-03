@@ -444,7 +444,7 @@ function BuyNow(id){
                 <input type="number" class ="amount" min = '30' max="50" value="40">
             </div>
             <div class = "pr-price">
-                <span>${toCurrency(buy_item.price)}</span>
+                <span>${toCurrency(buy_item.price)} VND</span>
             </div>
             
         </div>`;
@@ -453,7 +453,7 @@ function BuyNow(id){
     pay.innerHTML += `
     <div class="total">
         <span><hr></span>
-        <span>Total: ${toCurrency(buy_item)} VND</span>
+        <span>Total: ${toCurrency(buy_item.price)} VND</span>
     </div>
     <div class="pay">
         <span><hr></span>
