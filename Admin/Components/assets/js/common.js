@@ -717,6 +717,50 @@ function fakerDataAccount() {
             created_at: new Date().toLocaleDateString('en-US'),
             updated_at: new Date().toLocaleDateString('en-US'),
         }
+        , {
+            id: 5,
+            name: 'giày thể thao',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 2000000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 6,
+            name: 'giày thể thao nam',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 5,
+            price: 400000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 7,
+            name: 'giày thể thao nu',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 2,
+            price: 300000,
+            size: 'S',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        },
+        {
+            id: 8,
+            name: 'giày',
+            image: 'https://linuxhint.com/wp-content/uploads/2021/08/image1-2.png',
+            quantity: 4,
+            price: 67000,
+            size: 'M',
+            status: true,
+            created_at: new Date().toLocaleDateString('en-US'),
+            updated_at: new Date().toLocaleDateString('en-US'),
+        }
     ];
     for (let i = 1; i < 5; i++) {
 
@@ -726,6 +770,7 @@ function fakerDataAccount() {
 function fakerDataOne() {
     const localDataAdmin = localStorage.getItem('accountAdmin');
     const localDataAccount = localStorage.getItem('accounts');
+
     if (!localDataAdmin) {
         createAdminAccount()
     } if (!localDataAccount) {
