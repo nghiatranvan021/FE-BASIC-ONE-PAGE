@@ -4,12 +4,16 @@
     --main-color : rgb(135, 169, 107);
 }
 body{
-    font-family: "Roboto";
+    font-family: "Roboto";s
 } */
-/* .head{
+.head{
+    width: 100%;
     position: fixed;
-    margin-top: 100px;
-} */
+    top: 100px;
+}
+.container{
+    margin-top: 20%;
+}
 .logo_product img{
     width: 70px;
     height: 70px;
@@ -92,6 +96,7 @@ div.menu button.active{
 .other button:hover{
     transform: scale(1.5);
 }
+
 
 .lg-title{
     text-align: center;
