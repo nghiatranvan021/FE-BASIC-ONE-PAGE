@@ -1,3 +1,6 @@
+#container{
+    text-transform: none;
+}
 .head-img img{
     width: 100%;
 }

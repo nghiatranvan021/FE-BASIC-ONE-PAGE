@@ -5,36 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Web1/Client/assets/css/product_css/product.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    
+    <link rel="stylesheet" href="/Web1/Client/assets/fonts/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/Web1/Client/assets/css/style.css">
+    <link rel="stylesheet" href="/Web1/Client/assets/css/homepage.css">
+    <script type = "text/javascript" src="/Web1/Client/assets/js/homepage.js"></script>
     <script type="text/javascript" src="/Web1/Client/assets/js/product_js/product.js" defer></script>
+    <script type = "text/javascript" src= "/Web1/Client/assets/js/product_js/scroll.js" defer></script>
     <title>Products page</title>
 </head>
-<div class="head">
 
-    <div class = "logo_product">
-        <span>
-            <button onclick="location.href='product_page.html'"><img src="/Web1/Client/assets/images/product_image/download.jpg" alt=""></button>
-        </span>
-    </div>
-    <div class="menu">
-        <button class = "tabs-item active" onclick="createOtherProduct('all',this)">All</a></button>
-        <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
-        <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
-        <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
-        
-    </div>
-    <div class="other">
-        <input type="text" placeholder="Search...(lowercase)" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
-        <button id="cart" onclick="openCart()">
-            <i class="fas fa-shopping-bag"></i>
-        </button>
-        <button id="cart" href = "">
-            <i class="fas fa-book"></i>
-        </button>
-    </div>
-</div>
 <body background="/Web1/Client/assets/images/product_image/bg.png">
+    
+    <header>
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+            
+            <form action="" class="search-box-container">
+                <input type="search" id="search-box" placeholder="Search...">
+                <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
+            </form>
+        
+        </div>
+        <div class="header-2">
+             <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#product">Product</a>  
+                <a href="#deal">Order</a>
+                <a href="#warranty-policy">Warranty Policy</a>
+             </nav> 
+             <div class="icons">
+                <a href="#" class="fa-solid fa-cart-shopping"></a>
+                <a href="#" class="fa-solid fa-user"></a>
+    
+             </div>
+        </div>
+    </header>
+    <div id="head">
+        <!-- <div class = "logo_product">
+            <span>
+                <button onclick="location.href='product_page.html'"><img src="/Web1/Client/assets/images/product_image/download.jpg" alt=""></button>
+            </span>
+        </div>
+         -->
+        <div class="menu">
+            <button class = "tabs-item active" onclick="createOtherProduct('all',this)">All</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
+            
+        </div>
+        <div class="other"> 
+            <input type="text" placeholder="Search...(lowercase)" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
+            <button id="cart" onclick="openCart()">
+                <i class="fas fa-shopping-bag"></i>
+            </button>
+            <button id="cart" onclick = "window.location = 'warranty_policy.html'">
+                <i class="fas fa-book"></i>
+            </button>
+        </div>
+    </div>
     <div class = "products">
         <div class="container">
             <h1 class = "lg-title">OUR PRODUCTS!</h1>
@@ -60,5 +90,49 @@
     <div id = "notice">
         
     </div>
+    <footer>
+        <div class="box-container">
+
+            <div class="box">
+                <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+                <p>With 10 years of business, we are committed to providing the best quality products to our customers</p>
+                <div class="share">
+                    <a href="#" class="btn fab fa-facebook-f"></a>
+                    <a href="#" class="btn fab fa-twitter"></a>
+                    <a href="#" class="btn fab fa-instagram"></a>
+                </div>
+            </div>
+            
+            <div class="box">
+                <h3>Branches</h3>
+                <div class="links">
+                    <a href="#">Hà nội</a>
+                    <a href="#">Đà Nẵng</a>
+                    <a href="#">Tp. Hồ Chí Minh</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Fast access</h3>
+                <div class="links">
+                    <a href="#home">Home</a>
+                    <a href="#product">Product</a>
+                    <a href="#deal">Order</a>
+                    <a href="#warranty-policy">Warranty Policy</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Application</h3>
+                <div class="links">
+                    <a href="#">google play</a>
+                    <a href="#">window xp</a>
+                    <a href="#">app store</a>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+     <!-- Footer end-->
 </body>
 </html>

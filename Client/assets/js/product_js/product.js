@@ -295,12 +295,10 @@ function showNotice(s){
 }
 //convert to currency
 function toCurrency(price){
-    var s = "";
-    s = price.toLocaleString('en-US', {
-        style:'currency',
-        currency: 'VND',
-    })
-    return s;
+    return new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    }).format(price)
 }
 //Find product by lowercase name
 function findProduct(){
@@ -315,6 +313,7 @@ function findProduct(){
         alert("Sorry, we don't have these product now!");
     }else
         createProducts(src_lst);
+    window.location = '#';
 }
 //Show list product
 function createProducts(products) {
@@ -348,7 +347,7 @@ function createProducts(products) {
             </div>
         </div>
         <div class="name">${item.name}</div>
-        <div class="price">${toCurrency(item.price)} VND</div>
+        <div class="price">${toCurrency(item.price)}</div>
     </div>
     </div>`
     }
@@ -357,6 +356,7 @@ function createProducts(products) {
 createProducts(products);
 //show list products in many kinds
 function createOtherProduct(type,element) {
+    window.location = "#";
     let type_product = []
     let tabs = document.getElementsByClassName('tabs-item');
     for (i = 0 ;i<tabs.length;i++){
@@ -444,7 +444,7 @@ function BuyNow(id){
                 <input type="number" class ="amount" min = '30' max="50" value="40">
             </div>
             <div class = "pr-price">
-                <span>${toCurrency(buy_item.price)} VND</span>
+                <span>${toCurrency(buy_item.price)}</span>
             </div>
             
         </div>`;
@@ -453,7 +453,7 @@ function BuyNow(id){
     pay.innerHTML += `
     <div class="total">
         <span><hr></span>
-        <span>Total: ${toCurrency(buy_item.price)} VND</span>
+        <span>Total: ${toCurrency(buy_item.price)}</span>
     </div>
     <div class="pay">
         <span><hr></span>
@@ -511,7 +511,7 @@ function openCart(){
                 <input type="number" class ="amount" min = '30' max="50" value="40">
             </div>
             <div class = "pr-price">
-                <span>${toCurrency(item.price)} VND</span>
+                <span>${toCurrency(item.price)}</span>
             </div>
             <div class = "delete">
                 <button type="button" onclick = "deleteProduct(${item.id})">&times;</button>
@@ -530,7 +530,7 @@ function openCart(){
     pay.innerHTML += `
     <div class="total">
         <span><hr></span>
-        <span>Total: ${toCurrency(sum)} VND</span>
+        <span>Total: ${toCurrency(sum)}</span>
     </div>
     <div class="pay">
         <span><hr></span>
@@ -557,6 +557,9 @@ function getRate(rate){
     var s = "";
     for (var i = 0;i<rate;i++)
         s += "<span ><i class='fa fa-star'></i></span>";
+    if (Math.abs(rate0 - rate) > 0){
+        s +="<span ><i class='fa-solid fa-star-half'></i></span>"
+    }
     return s;
 }
 function showDetail(id){
@@ -583,7 +586,7 @@ function showDetail(id){
         ${s}
         </div>
         <div class = "detail-price">
-            ${toCurrency(selected.price)} VND
+            ${toCurrency(selected.price)}
         </div>
         <div class = "detail-title">
             About this product
