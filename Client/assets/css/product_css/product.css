@@ -256,8 +256,11 @@ div.menu button.active{
     font-weight: bold;
 }
 #cart_products{
+    height: 300px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    
 }
 .single-product{
     display: flex;

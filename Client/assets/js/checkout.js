@@ -43,7 +43,8 @@ var sum =0;
 function showProducts(){
   let orders = localStorage.getItem("bought_products");
   orders = JSON.parse(orders);
-  console.log(orders);
+  let size = localStorage.getItem("sizes");
+  size = JSON.parse(size);
   var pos = document.getElementById("orders");
   pos.innerHTML = "";
   for (var i = 0;i<orders.length;i++){
@@ -58,6 +59,7 @@ function showProducts(){
                 <td>
                   <br> <span class='thin'>${item.productType}</span>
                   <br> ${item.name}<br> 
+                  <br>SIZE: ${size[i]}<br>
                 </td>
   
               </tr>
