@@ -352,6 +352,7 @@ function createProducts(products) {
     </div>`
     }
 }
+//phan trang
 
 createProducts(products);
 //show list products in many kinds
@@ -466,7 +467,7 @@ function BuyNow(id){
 function buyInCart(){
     var modal = document.getElementById('cart-info');
     modal.style.display = 'none';
-    
+    window.location = "../checkout.html";
     if (order.length != 0){
         showNotice("Your transaction was successful! &#10003;");
         bought = bought.concat(order);
