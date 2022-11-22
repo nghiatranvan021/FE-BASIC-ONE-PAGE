@@ -464,23 +464,40 @@ function BuyNow(id){
 }
 
 
+function getSize() {
+    let items = document.getElementsByClassName("amount")
+    let sizes = []
+    for (let sizeInItem of items) {
+        sizes.push(sizeInItem.value)
+    }
+    return sizes
+}
+
 function buyInCart(){
     var modal = document.getElementById('cart-info');
     modal.style.display = 'none';
-    window.location = "../checkout.html";
+    
     if (order.length != 0){
+        let sizes = getSize();
+        localStorage.setItem("sizes", JSON.stringify(sizes))
+
+
         showNotice("Your transaction was successful! &#10003;");
         bought = bought.concat(order);
         localStorage.setItem("bought_products",JSON.stringify(bought));
+        
         order = [];
         localStorage.removeItem("orders");
+
+        window.location = "../checkout.html";
+
         
     }
-    else alert("There is nothing in cart!");
+    else showNotice("There is nothing in cart");
     
 }
 
-
+let size = [];
 // cart button
 function openCart(){
     var modal = document.getElementById('cart-info');
@@ -518,7 +535,8 @@ function openCart(){
                 <button type="button" onclick = "deleteProduct(${item.id})">&times;</button>
             </div>
         </div>`;
-        
+
+    console.log(size);
     }
     //Sum the products
     sum = 0;
