@@ -73,7 +73,63 @@ function handleShowOrderDetail(id) {
 }
 
 function handleSearchOrder(e) {
-    console.log(e.value);
+
+    const regex = /^[^a-zA-Z0-9]+$/;
+    let value;
+    e.value.match(regex) ? value = '' : value = e.value.trim();
+
+    const tbody = document.querySelector('#account_tbody');
+    let result = [];
+    const orders = JSON.parse(localStorage.getItem('orders'));
+
+
+    orders.filter((item) => {
+        if (stringToASCII((item.first_name + " " + item.last_name).toLowerCase()).includes(stringToASCII(value.toLowerCase()))) {
+            result = [
+                ...result,
+                item
+            ]
+        }
+    });
+    if (result.length <= 0) {
+        const html = `<tr>
+            <td colspan="6">
+                <p class="account_notfound"> Order not found.</p>
+            </td>
+            </tr> `;
+        tbody.innerHTML = html
+    } else {
+        const html = result.map((order, index) => {
+
+            return ` <tr>
+    
+            <th>${++index}</th>
+            <td>${order.first_name} ${order.last_name}</td>
+            <td>${order.quantity}</td>
+            <td>${order.total.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'VND',
+            })}</td>
+            <td>
+                <select onchange="handleOnchangeStatus(${order.id},this)" class="order_select" name="">
+                    <option ${order.status === 'approved' && 'selected'} value="approved">Approved</option>
+                    <option ${order.status === 'pending' && 'selected'} value="pending">Pending</option>
+                    <option ${order.status === 'cancel' && 'selected'} value="cancel">Cancel</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="handleShowOrderDetail(${order.id})" class="orders_action-btn bg-edit"><i
+                        class="fa-solid fa-circle-exclamation"></i></i></button>
+        
+            </td>
+        
+        </tr> `;
+
+        });
+        tbody.innerHTML = html.join('')
+    }
+
+
 }
 function handleShowOrder() {
     const tbody = document.querySelector('#account_tbody');
@@ -98,7 +154,7 @@ function handleShowOrder() {
                 currency: 'VND',
             })}</td>
             <td>
-                <select onchange="handleOnchangeStatus(${order.id})" class="order_select" name="">
+                <select onchange="handleOnchangeStatus(${order.id},this)" class="order_select" name="">
                     <option ${order.status === 'approved' && 'selected'} value="approved">Approved</option>
                     <option ${order.status === 'pending' && 'selected'} value="pending">Pending</option>
                     <option ${order.status === 'cancel' && 'selected'} value="cancel">Cancel</option>
@@ -116,9 +172,84 @@ function handleShowOrder() {
 
     tbody.innerHTML = html.join('')
 }
-function handleOnchangeStatus(id) {
-    console.log('status', id);
+function handleOnchangeStatus(id, e) {
+
+    const orders = JSON.parse(localStorage.getItem('orders'));
+
+    orders.map((item, index) => {
+        if (item.id === id) {
+            item.status = e.value
+            orders[index] = {
+                ...item
+            }
+        }
+    })
+    localStorage.setItem('orders', JSON.stringify(orders));
+    showMessage('Success', 'Update status success.', 'success', 2000);
 }
 function handleSearchStatus(e) {
-    console.log(e.value)
+    const tbody = document.querySelector('#account_tbody');
+    const orders = JSON.parse(localStorage.getItem('orders'));
+
+
+
+    const result = orders.map((order, index) => {
+
+        if (e.value == order.status) {
+
+            return ` <tr>
+
+        <th>${++index}</th>
+        <td>${order.first_name} ${order.last_name}</td>
+        <td>${order.quantity}</td>
+        <td>${order.total.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'VND',
+            })}</td>
+        <td>
+            <select onchange="handleOnchangeStatus(${order.id},this)" class="order_select" name="">
+                <option ${order.status === 'approved' && 'selected'} value="approved">Approved</option>
+                <option ${order.status === 'pending' && 'selected'} value="pending">Pending</option>
+                <option ${order.status === 'cancel' && 'selected'} value="cancel">Cancel</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="handleShowOrderDetail(${order.id})" class="orders_action-btn bg-edit"><i
+                    class="fa-solid fa-circle-exclamation"></i></i></button>
+    
+        </td>
+    
+     </tr> `;
+        } else if (e.value == 'all') {
+
+            return ` <tr>
+
+        <th>${++index}</th>
+        <td>${order.first_name} ${order.last_name}</td>
+        <td>${order.quantity}</td>
+        <td>${order.total.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'VND',
+            })}</td>
+        <td>
+            <select onchange="handleOnchangeStatus(${order.id},this)" class="order_select" name="">
+                <option ${order.status === 'approved' && 'selected'} value="approved">Approved</option>
+                <option ${order.status === 'pending' && 'selected'} value="pending">Pending</option>
+                <option ${order.status === 'cancel' && 'selected'} value="cancel">Cancel</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="handleShowOrderDetail(${order.id})" class="orders_action-btn bg-edit"><i
+                    class="fa-solid fa-circle-exclamation"></i></i></button>
+    
+        </td>
+    
+     </tr> `;
+        }
+
+    });
+
+
+    tbody.innerHTML = result.join('')
+
 }

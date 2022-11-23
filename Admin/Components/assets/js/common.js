@@ -369,7 +369,19 @@ function handleShowPassword(e, id) {
     input && e && input.type === 'password' ? input.type = 'text' : input.type = 'password';
 
 }
-
+function stringToASCII(str) {
+    try {
+        return str.replace(/[àáảãạâầấẩẫậăằắẳẵặ]/g, 'a')
+            .replace(/[èéẻẽẹêềếểễệ]/g, 'e')
+            .replace(/[đ]/g, 'd')
+            .replace(/[ìíỉĩị]/g, 'i')
+            .replace(/[òóỏõọôồốổỗộơờớởỡợ]/g, 'o')
+            .replace(/[ùúủũụưừứửữự]/g, 'u')
+            .replace(/[ỳýỷỹỵ]/g, 'y')
+    } catch {
+        return ''
+    }
+}
 // checkout login
 function checkLogin() {
     const accounts = JSON.parse(localStorage.getItem('accountAdmin'));

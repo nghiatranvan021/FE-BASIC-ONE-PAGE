@@ -55,11 +55,13 @@ function handleSaveAccount(id) {
     }
 }
 function HandleSubmitSearch(e) {
-    const value = e.value;
+    const regex = /^[^a-zA-Z0-9]+$/;
+    let value;
+    e.value.match(regex) ? value = '' : value = e.value.trim();
     const tbody = document.getElementById('account_tbody');
     let result = [];
     JSON.parse(localStorage.getItem('accounts')).filter((account) => {
-        if ((account.first_name + " " + account.last_name).search(value) >= 0) {
+        if (stringToASCII((account.first_name + " " + account.last_name).toLowerCase()).includes(stringToASCII(value.toLowerCase()))) {
             result = [
                 ...result,
                 account

@@ -1,3 +1,64 @@
 <div class="product_create">
-    <p class="title">create product</p>
+    <p class="title">Create product</p>
+    <div class="wrapper_product">
+        <div class="parent_product" onchange="onValidateCreateProduct()">
+            <form id="product_create_form" class="wrapper_product-form">
+
+                <div class="group_input_product form_group">
+                    <label for="product_name">Name</label>
+                    <input id="product_name" type="text" class="input_product" placeholder="Enter Name ...">
+                    <span class="form-message"></span>
+                </div>
+
+                <div class="group_input_product form_group">
+                    <label for="product_img">Image</label>
+                    <input id="product_img" type="text" class="input_product" placeholder="Enter link image...">
+                    <span class="form-message"></span>
+                </div>
+                <div class="group_input_product form_group">
+                    <label for="product_pt">Quantity</label>
+                    <input id="product_pt" type="number" class="input_product" placeholder="Enter Quantity...">
+                    <span class="form-message"></span>
+                </div>
+                <div class="group_input_product form_group">
+                    <label for="product_price">Price</label>
+                    <input id="product_price" type="number" class="input_product" placeholder="Enter Price....">
+                    <span class="form-message"></span>
+                </div>
+                <div class="group_input_product form_group">
+                    <label>Size</label>
+                    <select name="" id="product_size" class="input_product">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                </div>
+                <div class="group_input_product form_group group_input_product_custom">
+                    <!-- <label for="product_size">Size</label>
+                    <input id="product_size" type="text" class="input_product" placeholder="Enter Size...">
+                    <span class="form-message"></span> -->
+                    <div class="wrapper_btn">
+
+                        <button onclick="handleCreateProduct(this)" type="button"
+                            class="product_btn_create product_btn"><span class="button__text">Create</span>
+                        </button>
+                        <button
+                            onclick="loadFileHtml('content','../Products/list');activeSideBar('#sidebar_li-product');"
+                            type="button" class="product_btn_cancel product_btn">Cancel</button>
+                    </div>
+                </div>
+
+            </form>
+            <script src="../assets/js/product.js">
+
+
+            </script>
+            <script src="../assets/js/validate.js"></script>
+            <script>
+
+
+            </script>
+
+        </div>
+    </div>
 </div>
