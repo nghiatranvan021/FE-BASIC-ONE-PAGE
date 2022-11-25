@@ -7,7 +7,8 @@
     object-fit: cover;
     object-position: center;
     padding: 4px;
-    width: 50%;
+    border-radius: 5px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -26,13 +27,16 @@
 }
 
 .product_action-btn.bg-edit {
-    background-color: #14a2b8;
-
+    background-color: #0171b9;
+    color:#fff;
+    cursor: pointer;
 }
 
 .product_action-btn.bg-delete {
 
     background-color: #dc3444;
+    color: #fff;
+    cursor: pointer;
 }
 
 .product_action-btn:hover i {
@@ -58,14 +62,17 @@
     padding: 10px 0;
     width: 50%;
 
+
+
 }
 
 .product_action-search input {
-    height: 30px;
+    height: 35px;
     min-width: 360px;
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 2px;
+  margin: 10px 0;
 }
 
 .product_action-add {
@@ -77,14 +84,15 @@
     float: right;
     display: block;
     font-size: 14px;
-    background-color: #14a2b8;
+    background-color:#0171b9;
     border: none;
     border-radius: 4px;
     width: 100px;
     color: #fff;
     text-transform: uppercase;
-    height: 30px;
+    height: 40px;
     padding: 4px;
+    margin-bottom: 10px;
 }
 
 .product_action-add button:hover {
