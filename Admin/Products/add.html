@@ -28,9 +28,7 @@
                 <div class="group_input_product form_group">
                     <label>Size</label>
                     <select name="" id="product_size" class="input_product">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
+                       
                     </select>
                 </div>
                 <div class="group_input_product form_group group_input_product_custom">
@@ -55,7 +53,14 @@
             </script>
             <script src="../assets/js/validate.js"></script>
             <script>
-
+                document.addEventListener('DOMContentLoaded',()=>{
+                    const optionSelect=document.querySelector('#product_size');
+                    let optionHtml='';
+                    for(let i=30; i <= 45 ; i++){
+                        optionHtml +=`<option loading="lazy" value="${i}">${i}</option>`;
+                    }
+                    optionSelect.innerHTML=optionHtml
+                })
 
             </script>
 
