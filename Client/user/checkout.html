@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/Web1/Client/assets/css/checkout.css">
-    <script src="/Web1/Client/assets/js/checkout.js" defer></script>
+    <title>Cart</title>
+    <link rel="stylesheet" href="../../Client/assets/css/homepage/homepage.css">
+    <link rel="stylesheet" href="../../Client/assets/css/homepage/style.css">
+    
+    <link rel="stylesheet" href="../../Client/assets/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../Client/assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../Client/assets/css/checkout/checkout.css">
+    <script type = "text/javascript" src= "../../Client/assets/js/checkout_js/checkout.js" defer></script>
+    
 </head>
 <body>
-<div class='container'>
+<!-- <div class='container'>
     <div class='window'>
       <div class='order-info'>
         <div class='order-info-content'>
           <h2>Order Summary</h2>
-                  <!-- <div class='line'></div> -->
+<div class='line'></div> 
           <div id = "orders">
           </div>
           <div id='total'>
@@ -65,6 +71,131 @@
           </div>
         </div>
       </div>
-      
+       -->
+       <!-- Header start-->
+       <header>
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+            
+            <form action="" class="search-box-container">
+                <!-- <input type="search" id="search-box" placeholder="Search...">
+                <label for="search-box" class="fa-solid fa-magnifying-glass"></label> -->
+            </form>
+        
+        </div>
+    
+       
+    
+        <div class="header-2">
+
+             <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="product_page.html">Product</a>  
+                <a href="cart.html">Order</a>
+                <a href="warranty_policy.html">Warranty Policy</a>
+             </nav> 
+    
+             <div class="icons">
+                <a href="checkout.html" class="fa-solid fa-cart-shopping"></a>
+                <a href="../../Client/user/login.html" class="fa-solid fa-user"></a>
+    
+             </div>
+        </div>
+    </header>
+    <!-- <div id = "sidebar">
+        <button class = "cart-info">Cart information</button>
+        <button class = "process">Processing</button>
+    </div> -->
+    <div id = "title"><h1>Cart infomation</h1></div>
+    <div id = "container">
+      <div id = "pr-layout">
+        
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <div id = "total">
+    </div>
+    <hr class="line">
+    <div id="purchase">
+      <div id = "pur-btn"><button onclick="buy()">purchase</button></div>
+    </div>
+
+    <!-- <div id = "pur-modal">
+      <div id = "pur-content">
+        <div id = "pur-title"><span>PURCHASE INFO</span>
+          <button onclick="closemd()">&times;</button>
+        </div>
+        <div id = "address">Address: 
+          <input type="text" id="varadd">
+        </div>
+        <div id= "phone">Phone number: 
+          <input type="text" id="varphone">
+        </div>
+        <div id = "method">Purchase method: 
+          <select id="pur-method">
+            <option value="receipt">Place of receipt</option>
+          </select>
+        </div>
+        <div id = "buy"><button onclick="confirmBTN()">Confirm</button></div>
+      </div>
+    </div> -->
+
+    <div id = "thanks-model">
+      <div id = "tks-content">
+        <div id = "tks-title">
+          <span>THANKS FROM DEV SHOP</span>
+          <button onclick="closetmd()">&times;</button>
+        </div>
+        <div id = "tks-p">
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="box-container">
+
+          <div class="box">
+              <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+              <p>With 10 years of business, we are committed to providing the best quality products to our customers</p>
+              <div class="share">
+                  <a href="#" class="btn fab fa-facebook-f"></a>
+                  <a href="#" class="btn fab fa-twitter"></a>
+                  <a href="#" class="btn fab fa-instagram"></a>
+              </div>
+          </div>
+          
+          <div class="box">
+              <h3>Branches</h3>
+              <div class="links">
+                  <a href="#">Hà nội</a>
+                  <a href="#">Đà Nẵng</a>
+                  <a href="#">Tp. Hồ Chí Minh</a>
+              </div>
+          </div>
+  
+          <div class="box">
+              <h3>Fast access</h3>
+              <div class="links">
+                  <a href="#home">Home</a>
+                  <a href="#product">Product</a>
+                  <a href="#deal">Order</a>
+                  <a href="#warranty-policy">Warranty Policy</a>
+              </div>
+          </div>
+  
+          <div class="box">
+              <h3>Application</h3>
+              <div class="links">
+                  <a href="#">google play</a>
+                  <a href="#">window xp</a>
+                  <a href="#">app store</a>
+              </div>
+          </div>
+  
+      </div>
+  </footer>
+   <!-- Footer end-->
 <body>  
 </html>

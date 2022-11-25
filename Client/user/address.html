@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web1</title>
-    <link rel="stylesheet" href="/Web1/Client/assets/css/personalpage.css">
-    <link rel="stylesheet" href="/Web1/Client/assets/css/index.css">
-    <link rel="stylesheet" href="/Web1/Client/assets/css/address.css">
-    <link rel="stylesheet" href="/Web1/Client/assets/css/addressbook.css">
+    <link rel="stylesheet" href="../../Client/assets/css/personal/personalpage.css">
+    <link rel="stylesheet" href="../../Client/assets/css/personal/index.css">
+    <link rel="stylesheet" href="../../Client/assets/css/personal/address.css">
+    <link rel="stylesheet" href="../../Client/assets/css/personal/addressbook.css">
+    <link rel="stylesheet" href="../../Client/assets/css/personal/log.css">
+    <script type="text/javascript" src="../../Client/assets/js/pesonal_js/address.js" defer></script>
 </head>
 <body>
 
@@ -24,7 +26,6 @@
         
         </div>
     
-       
     
         <div class="header-2">
 
@@ -49,50 +50,98 @@
                     Total Account 
                 </h5>
                 <ul id="UL_5">
-                    <li id="LI_6">
-                        <a id="A_7" href="personalpage.html"><p id="A_7_5">Personal Infomation</p></a> 
-                    </li>
+                    
                     <li id="LI_8">
-                        <a id="A_9" href="address.html"><p id="A_9_5"> Address book</p></a>
+                        <a id="A_9" href="address.html"><p id="A_9_5"> Personal Information</p></a>
                         
                     </li>
                     <li id="LI_12">
-                        <a id="A_13"><p id="A_13_5">Card DEVClub</p></a>
+                        <a id="A_13" href="cart.html"><p id="A_13_5" >Cart DEVClub</p></a>
                     </li>
-                    <li id="LI_14">
-                        <a id="A_15"><p id="A_15_5">Log out</p></a>
-                    </li>
+                    <div id="myModal_1" class="modal_1">
+                        <div class="modal-content_1">
+                            <div class="modal-header_1">
+                                <h1 id="H1_1">PASS DEVshop FOR YOU</h1>
+                                <span class="close_1">&times;</span>
+                            </div>
+                            <div class="modal-body_1">
+                                <p id="SALE"> this code at the cashier to receive a discount code on your purchase.</p>
+                            </div>
+                            <div id="SALE_0">
+                                Currently no valid discount code
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="myModal_1_1" class="modal_1_1">
+                        <div class="modal-content_1_1">
+                                <span class="close_1_1">&times;</span>
+                            <div class="modal-body_1_1">
+                                <div id="LOG_0">LOG OUT</div>
+                                <div id="LOG_1">Do you want to LOG OUT?</div>
+                                <div id="LOG_2">
+                                    <button id="LOG_3">Yes</button>
+                                    <button id="LOG_4">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </div>
             <div id="DIV_26">
                 <div id="DIV_1_1">
+                    <h4 id="H4_3">
+                        Information Book
+                    </h4>
                     <div id="DIV_2_1">
-                        <h4 id="H4_3">
-                            Address Book
-                        </h4>
+                      
                         <li id="LI_1">
                             <h3 id="H3_2">
-                                Default billing address
+                                Information
                             </h3> 
                             <address id="ADDRESS_3">
                                 Lê Vỹ<br /> 9/4<br /> Phường Bình Trưng Tây, Quận 2, Hồ Chí Minh, Việt Nam<br /> Tel: 0937645711
                             </address>
-                            <p id="P_7">
-                                <a href="" id="A_8">Change shipping address</a>
-                            </p>
                         </li>
-                        <li id="LI_1">
-                            <h3 id="H3_2">
-                                Default shipping address
-                            </h3> 
-                            <address id="ADDRESS_3">
-                                Lê Vỹ<br /> 9/4<br /> Phường Bình Trưng Tây, Quận 2, Hồ Chí Minh, Việt Nam<br/> Tel: 0937645711
-                            </address>
-                            <p id="P_7">
-                                <a href="" id="A_8">Change shipping address</a>
-                            </p>
-                        </li>
-                         <button id="BUTTON"><span id="SPAN_1">Add new address</span></button>
+                        
+                    </div>
+                         <button id="BUTTON" onclick="openmd()"><span id="SPAN_1">Change Info</span></button>
+                         <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 id="H1">Add Address</h1>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <div id="modal-body">
+                                    
+                                    <h3 id="INFO_1">Contact Infomation</h3>
+                                    <ul>
+                                        <li>
+                                            <input placeholder="First Name*" type="text" id="INPUT_1" name="firstname"  maxlength="255" />
+                                        </li>
+                                        <li>
+                                            <input placeholder="Last Name*" type="text" id="INPUT_2" name="lastname"  maxlength="255" />
+                                        </li>
+                                        <li>
+                                            <input type="text" maxlength="10" name="telephone" placeholder="Ex: 0972xxxx" id="INPUT_3" />
+                                        </li>
+                                    </ul>
+                                    <h3 id="INFO_2">Address </h3>
+                                    <ul>
+                                        <li>
+                                        </li>
+                                        <li>
+                                            <label for=""><i>Address </i><sup style="color: RED;">*</sup>:</label>
+                                            <input placeholder="Address" type="text" id="INPUT_4" maxlength="255" />
+
+                                        </li>
+                                        
+                                    </ul>
+                                    <div id="SAV">
+                                    <button onclick="saveinfo()">SAVE ADDRESS</button>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>
                 <div id="DIV_78">
@@ -116,5 +165,50 @@
             </div> 
         </div>
     </div>
+      <!-- Footer start-->
+      <footer>
+        <div class="box-container">
+
+            <div class="box">
+                <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+                <p>With 10 years of business, we are committed to providing the best quality products to our customers</p>
+                <div class="share">
+                    <a href="#" class="btn fab fa-facebook-f"></a>
+                    <a href="#" class="btn fab fa-twitter"></a>
+                    <a href="#" class="btn fab fa-instagram"></a>
+                </div>
+            </div>
+            
+            <div class="box">
+                <h3>Branches</h3>
+                <div class="links">
+                    <a href="#">Hà nội</a>
+                    <a href="#">Đà Nẵng</a>
+                    <a href="#">Tp. Hồ Chí Minh</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Fast access</h3>
+                <div class="links">
+                    <a href="#home">Home</a>
+                    <a href="#product">Product</a>
+                    <a href="#deal">Order</a>
+                    <a href="#warranty-policy">Warranty Policy</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Application</h3>
+                <div class="links">
+                    <a href="#">google play</a>
+                    <a href="#">window xp</a>
+                    <a href="#">app store</a>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+     <!-- Footer end-->
 </body>
 </html>

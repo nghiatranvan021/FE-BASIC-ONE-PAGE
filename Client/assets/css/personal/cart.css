@@ -1,0 +1,47 @@
+#layout{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.product{
+    width: auto;
+    border-bottom: solid gray 5px;
+    display: flex;
+    
+    justify-content:space-between;
+}
+
+.pro-img img{
+    width: 100px;
+    height: 100px;
+}
+.pro-name{
+    font-size: 25px;
+
+}
+.pro-size{
+    font-size: 25px;
+    margin-top: 10px;
+}
+.pro-price{
+    color: red;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.product .info{
+    flex: 3;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#cancel button{
+    margin-top: 20px;
+    background-color: #27ae60;
+    font-size: 30px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease;
+}
+#cancel button:hover{
+    background: red;
+    transform: scale(1.1);
+}
