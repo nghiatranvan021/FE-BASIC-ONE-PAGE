@@ -3,7 +3,7 @@ var scrolldefalt = 100;
 var posmenu = this.document.getElementById('head');
 window.addEventListener('scroll',function(e){
     const scrolled = window.scrollY;
-    console.log(scrolled)
+    // console.log(scrolled)
     if(scrolled > scrolldefalt){
         posmenu.style.position = 'fixed';
         posmenu.style.top = 0;
