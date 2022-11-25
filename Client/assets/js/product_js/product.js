@@ -489,7 +489,7 @@ function buyInCart(){
         order = [];
         localStorage.removeItem("orders");
 
-        window.location = "../checkout.html";
+        window.location = "checkout.html";
 
         
     }
