@@ -1,0 +1,36 @@
+<div class="orders">
+    <p class="title">List Order</p>
+    <div class="orders_action">
+        <div class="orders_action-search">
+            <input type="search" id="orders_search" onchange="handleSearchOrder(this)" placeholder="Seach full name...">
+        </div>
+        <div class="orders_action-add">
+            <select name="" onchange="handleSearchStatus(this)" id="order_select-option">
+                <option value="all">--Status--</option>
+                <option value="approved">Approved</option>
+                <option value="pending">Pending</option>
+                <option value="cancel">Cancel</option>
+            </select>
+        </div>
+    </div>
+    <table class="account_table">
+        <thead>
+            <tr>
+                <th percent="1">
+                    Stt
+                </th>
+                <th percent="3">fullName</th>
+                <th percent="1">Quantity</th>
+                <th percent="2">Price</th>
+                <th percent="1">Status</th>
+                <th percent="2">Action</th>
+            <tr>
+        </thead>
+        <tbody id="account_tbody">
+        </tbody>
+    </table>
+    <script src="../assets/js/order.js"></script>
+    <script>
+        handleShowOrder()
+    </script>
+</div>

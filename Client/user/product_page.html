@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Client/assets/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../Client/assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../Client/assets/css/homepage/style.css">
+    <link rel="stylesheet" href="../../Client/assets/css/homepage/homepage.css">
+    <link rel="stylesheet" href="../../Client/assets/css/product_css/product.css">
+
+    <script type = "text/javascript" src="../../Client/assets/js/homepage.js"></script>
+    <script type="text/javascript" src="../../Client/assets/js/product_js/product.js" defer></script>
+     <script type = "text/javascript" src= "../../Client/assets/js/product_js/scroll.js" defer></script>
+    <title>Products page</title>
+</head>
+
+<body background="../../Client/assets/images/product_image/bg.png">
+    
+    <header>
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+            
+            <form action="" class="search-box-container">
+                <!-- <input type="search" id="search-box" placeholder="Search...">
+                <label for="search-box" class="fa-solid fa-magnifying-glass"></label> -->
+            </form>
+        
+        </div>
+    
+       
+    
+        <div class="header-2">
+
+             <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="product_page.html">Product</a>  
+                <a href="cart.html">Order</a>
+                <a href="warranty_policy.html">Warranty Policy</a>
+             </nav> 
+    
+             <div class="icons">
+                <a href="checkout.html" class="fa-solid fa-cart-shopping"></a>
+                <a href="../../Client/user/login.html" class="fa-solid fa-user"></a>
+    
+             </div>
+        </div>
+    </header>
+    <div id="head">
+        
+        <div class="menu">
+            <button class = "tabs-item active" onclick="createOtherProduct('all',this)">All</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('men',this)">Men</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('women',this)">Women</a></button>
+            <button class = "tabs-item" onclick="createOtherProduct('unisex',this)">Unisex</a></button>
+            
+        </div>
+        <div class="other"> 
+            <input type="text" placeholder="Search...(lowercase)" id="search"><button onclick="findProduct()"><i class="fas fa-search"></i></button></i>
+            <button id="cart" onclick="openCart()">
+                <i class="fas fa-shopping-bag"></i>
+            </button>
+        </div>
+    </div>
+    <div class = "products">
+        <div class="product_container">
+            <h1 class = "lg-title">OUR PRODUCTS!</h1>
+            <div id = 'all' class = "products-layout">
+            </div>
+        </div>
+    </div>
+    <div id = "cart-info" class = "cart_modal">
+        <!-- Content -->
+        <div class = "cart-modal-content">
+            <div class = 'intro'>
+                <span class="title">Your cart!</span>
+                <span class="close">&times;</span>
+            </div>
+            <div id = "cart_products">
+            </div>
+            <div id="payment">
+            </div>
+        </div>
+    </div>
+    <div id = "detail-info">
+    </div>
+    <div id = "notice">
+        
+    </div>
+
+    <footer>
+        <div class="box-container">
+
+            <div class="box">
+                <a href="#" class="logo"><i class="fa-brands fa-codepen"></i>Dev Shop</a>
+                <p>With 10 years of business, we are committed to providing the best quality products to our customers</p>
+                <div class="share">
+                    <a href="#" class="btn fab fa-facebook-f"></a>
+                    <a href="#" class="btn fab fa-twitter"></a>
+                    <a href="#" class="btn fab fa-instagram"></a>
+                </div>
+            </div>
+            
+            <div class="box">
+                <h3>Branches</h3>
+                <div class="links">
+                    <a href="#">Hà nội</a>
+                    <a href="#">Đà Nẵng</a>
+                    <a href="#">Tp. Hồ Chí Minh</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Fast access</h3>
+                <div class="links">
+                    <a href="#home">Home</a>
+                    <a href="#product">Product</a>
+                    <a href="#deal">Order</a>
+                    <a href="#warranty-policy">Warranty Policy</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <h3>Application</h3>
+                <div class="links">
+                    <a href="#">google play</a>
+                    <a href="#">window xp</a>
+                    <a href="#">app store</a>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+    <!-- Footer end-->
+</body>
+</html>

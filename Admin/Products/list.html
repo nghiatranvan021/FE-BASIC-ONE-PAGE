@@ -1,1 +1,34 @@
-<p>list_san pham</p>
+<div class="product">
+    <p class="title">List Products</p>
+    <div class="product_action">
+        <div class="product_action-search">
+            <input type="search" id="product_search" onchange="handleSearchProduct(this)" placeholder="Seach name...">
+        </div>
+        <div class="product_action-add">
+            <button onclick="loadFileHtml('content', '../Products/add')">Create <i
+                    class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+    <table class="account_table">
+        <thead>
+            <tr>
+                <th percent="1">
+                    Stt
+                </th>
+                <th percent="2">Name</th>
+                <th percent="2">Image</th>
+                <th percent="1">Quantity</th>
+                <th percent="1">Price</th>
+                <th percent="1">Size</th>
+                <th percent="2">action</th>
+            <tr>
+        </thead>
+        <tbody id="account_tbody">
+
+        </tbody>
+        <script src="../assets/js/product.js"></script>
+        <script>
+            render();
+        </script>
+    </table>
+</div>

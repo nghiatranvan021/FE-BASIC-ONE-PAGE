@@ -1,1 +1,90 @@
 
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../../Client/assets/css/homepage/auth.css">
+    
+  </head>
+  <body>
+    <div class="center">
+      <h1>Register</h1>
+      <form class="form" method="post">
+
+        <div class="txt_field">
+          <input type="text" id="username" required>
+          <span></span>
+          <label>Username</label>
+          <small></small>
+      </div>
+      
+        <div class="txt_field">
+            <input type="text" id="email" required>
+            <span></span>
+            <label>Email</label>
+            <small></small>
+        </div>
+        
+        <div class="txt_field">
+          <input type="password" id="password" required>
+          <span></span>
+          <label>Password</label>
+          <small></small>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="c_password" required>
+            <span></span>
+            <label>Confirm password</label>
+            <small></small>
+        </div>
+        
+        <input type="submit" value="Register">
+        <div class="sign_link">
+            Already have an account? <a href="login.html">Sign in</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="popup" id="success">
+      <div class="popup-content">
+        <div class="imgbox">
+          <img src="../../Client/assets/images/popup/checked.png" alt="" class="img">
+        </div>
+
+        <div class="title">
+          <h3>Success!</h3>
+        </div>
+
+        <p class="para">Sign Up Success!</p>
+        
+        <form action="">
+          <a href="login.html" class="button" id="s_button">OKAY</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="errors">
+      <div class="popup-content popup_errors">
+        <div class="imgbox">
+          <img src="../../Client/assets/images/homepage/popup/cancel.png" alt="" class="img">
+        </div>
+
+        <div class="title">
+          <h3>Sorry :(</h3>
+        </div>
+
+        <p class="para">Something went wrong. Please try again!</p>
+        
+        <form action="">
+          <a href="register.html" class="button" id="e_button">TRY AGAIN</a>
+        </form>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript" src="../../Client/assets/js/homepage_js/register.js"></script>
+</html>
+
+

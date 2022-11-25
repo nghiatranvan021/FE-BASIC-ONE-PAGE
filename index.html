@@ -2,17 +2,17 @@
 <script>
     const queryString = window.location.search;
     // check middleware here
+    //
     console.log(queryString);
     switch (queryString) {
-        case '?admin-login':
+        case '?admin':
             window.location = './Admin/Login';
             break;
-        case '?admin-account':
-            window.location = './Admin/Components/layout.html';
+        case '?404': break;
+        case '?error':
+            window.location = './Client/Network/network_error.html';
             break;
-        case '404': break;
         default:
-            alert('index.html client')
-                ;
+        window.location = './Client/user/index.html';
     }
 </script>

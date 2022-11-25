@@ -3,16 +3,17 @@
     <form action="" id="form_login" class="modal_form_login" method="post">
         <div class="form_group">
             <label for="">Email</label>
-            <input type="text" name="" id="login_email" placeholder="Email Enter...">
+            <input type="text" id="login_email" placeholder="Email Enter...">
             <span class="form-message"></span>
         </div>
         <div class="form_group">
             <label for="">Password</label>
-            <input type="password" name="" id="login_password" placeholder="Password Enter...">
+            <input type="password" id="login_password" placeholder="Password Enter...">
             <span class="form-message"></span>
         </div>
-        <button type="button" class="" onclick="submitLogin(this);" id="login_button"><span
-                class="button__text">login</span></button>
+        <button type="button" class="" onclick="submitLogin(this);" id="login_button">
+            <span class="button__text">login</span>
+        </button>
     </form>
     <p class="modal_forgot"><a onclick=" loadFileHtml('login_form_load', './forgot_password')" href="#">forgot
             password?</a></p>

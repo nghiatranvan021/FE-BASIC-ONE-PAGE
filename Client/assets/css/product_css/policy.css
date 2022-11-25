@@ -1,0 +1,54 @@
+#container{
+    text-transform: none;
+}
+.head-img img{
+    width: 100%;
+}
+.contact{
+    position: absolute;
+    top: 60%;
+}
+.contact img{
+    width: 300px;
+    height: 300px;
+    border: solid #27ae60 4px;
+    transition: all 0.5 ease;
+}
+
+.contact img:hover{
+    transform: scale(1.05);
+}
+.title{
+    font-size: 70px;
+    text-align: center;
+    margin-top: 60px;
+    border-radius: 50px;
+    border: black solid 5px;
+    background: #27ae60;
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+.policy{
+    margin-top: 50px;
+    width: 80%;
+    height: 30%;
+    background: rgb(241, 241, 241);
+
+    margin-left: 10%;
+    padding: 2rem 2rem 2rem 2rem;
+}
+.policy-title{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.policy-title h1{
+    text-align: center;
+}
+.policy-content{
+    margin-top: 1rem;
+    font-size: 20px;
+}

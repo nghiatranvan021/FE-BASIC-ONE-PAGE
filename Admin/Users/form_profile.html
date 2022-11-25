@@ -1,0 +1,40 @@
+<form id="form_profile" onchange="handleValidateProfile()" action="">
+    <div class="contact_form-group">
+        <label for="input_firstname">First Name</label>
+        <input id="input_firstname" type="text" placeholder="First Name ...">
+        <span class="form-message"></span>
+    </div>
+    <div class="contact_form-group">
+        <label for="input_lastName">Last Name</label>
+        <input id="input_lastName" placeholder="Last Name ..." type="text">
+        <span class="form-message"></span>
+    </div>
+    <div class="contact_form-group">
+        <label for="input_email">Email</label>
+        <input id="input_email" placeholder="Email ..." type="email">
+        <span class="form-message"></span>
+    </div>
+    <div class="contact_form-group">
+        <label for="input_phone">Phone</label>
+        <input id="input_phone" placeholder="Phone ..." type="text">
+        <span class="form-message"></span>
+    </div>
+    <button class="btn_user_info" onclick="handleSaveProfile(this)" type="button">Save</button>
+    <button class="btn_user_change" onclick=" loadFileHtml('contact_form', '../Users/change_password',false,true)"
+        type="button">change password</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            const first_name = document.querySelector('#input_firstname');
+            const last_name = document.querySelector('#input_lastName');
+            const Email = document.querySelector('#input_email');
+            const phone = document.querySelector('#input_phone');
+            first_name.value = userInfo.first_name;
+            last_name.value = userInfo.last_name;
+            Email.value = userInfo.email;
+            phone.value = userInfo.phone;
+        });
+
+    </script>
+</form>
