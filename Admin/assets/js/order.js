@@ -36,7 +36,7 @@ function handleShowOrderDetail(id) {
                 </thead>
                 <tbody id="account_tbody">
                                     ${cartUser.map((cart, index) => {
-        return `<tr>
+        return `<tr loading="lazy">
                 
                             <th percent="1">${++index}</th>
                             <td percent="2">${cart.name}</td>
