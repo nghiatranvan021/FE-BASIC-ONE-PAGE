@@ -1,5 +1,6 @@
 
-document.getElementById('radio1').checked = true;
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('radio1').checked = true;
 
 var counter = 2;
 setInterval(function(){
@@ -9,3 +10,4 @@ setInterval(function(){
         counter = 1;
     }
 }, 6000);
+})
