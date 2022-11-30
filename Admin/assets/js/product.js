@@ -38,7 +38,7 @@ function render() {
 }
 function handleCallEdit(id) {
     localStorage.setItem('edit_product_id', JSON.stringify(id));
-    loadFileHtml('content', '../../Admin/Products/edit');
+    loadFileHtml('content', '../../FE-BASIC-ONE-PAGE/Admin/Products/edit');
 }
 
 
@@ -137,7 +137,7 @@ function handleCreateProduct(e) {
         setTimeout(() => {
             showMessage('Success', "Create products success.", 'success', 3000);
             loadingButton(e, true);
-            loadFileHtml('content', '../../../FE-BASIC-ONE-PAGE/Admin/Products/list');
+            loadFileHtml('content', '../../../Admin/Products/list');
             activeSideBar('#sidebar_li-product');
         }, 2000)
     }
