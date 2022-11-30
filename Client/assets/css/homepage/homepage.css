@@ -7,7 +7,7 @@ body {
 
 /* header start */
 header {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0px;
     z-index: 3;
@@ -561,6 +561,15 @@ button.white {
 
 /* end popup */
 
+
+.products {
+    margin-top: 4% !important;
+}
+
+
+.products-layout {
+    margin-left: -30px !important;
+}
 /* footer start */
 
 footer .box-container{
