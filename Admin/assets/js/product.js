@@ -43,6 +43,7 @@ function handleCallEdit(id) {
 
 
 function handleUpdateProduct(e) {
+
     const id = JSON.parse(localStorage.getItem('edit_product_id'));
     const nameProduct = document.querySelector('#product_name').value
     const imageProduct = document.querySelector('#product_img').value
