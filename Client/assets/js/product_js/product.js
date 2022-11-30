@@ -361,11 +361,11 @@ function createOtherProduct(type,element) {
     let type_product = []
     let tabs = document.getElementsByClassName('tabs-item');
     for (i = 0 ;i<tabs.length;i++){
-        tabs[i].style.background = 'black';
-        tabs[i].style.color = 'white';
+        tabs[i].style.background = 'white';
+        tabs[i].style.color = '#2c2c54';
     }
-    element.style.background = 'white';
-    element.style.color = 'black';
+    element.style.background = '#27ae60'; 
+    element.style.color = 'white';
     switch(type){
         case 'men':
             for (let i = 0; i < products.length; i++) {
