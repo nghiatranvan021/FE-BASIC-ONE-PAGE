@@ -78,7 +78,7 @@ function handleUpdateProduct(e) {
         setTimeout(() => {
             showMessage('Success', "Update products success.", 'success', 3000);
             loadingButton(e, true);
-            loadFileHtml('content', '../../../FE-BASIC-ONE-PAGE/Admin/Products/list');
+            loadFileHtml('content', '../../Admin/Products/list');
             activeSideBar('#sidebar_li-product');
         }, 2000)
     }
@@ -137,7 +137,7 @@ function handleCreateProduct(e) {
         setTimeout(() => {
             showMessage('Success', "Create products success.", 'success', 3000);
             loadingButton(e, true);
-            loadFileHtml('content', '../../FE-BASIC-ONE-PAGE/Admin/Products/list');
+            loadFileHtml('content', '../../Admin/Products/list');
             activeSideBar('#sidebar_li-product');
         }, 2000)
     }
