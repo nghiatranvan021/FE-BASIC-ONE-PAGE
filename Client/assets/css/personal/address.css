@@ -5,7 +5,7 @@
 #DIV_1 {
     block-size: 1480.2px;
     box-sizing: border-box;
-    float: left;
+    /* float: left; */
     height: 1000.2px;
     inline-size: 1519.2px;
     perspective-origin: 759.6px 740.1px;
@@ -14,6 +14,7 @@
     font: 16px / 22px;
     padding: 0px 15px;
 }
+
 #DIV_26 {
     block-size: 1400.2px;
     box-sizing: border-box;
@@ -27,6 +28,7 @@
     margin: 0px 0px 0px 52.075px;
     padding: 0px 15px;
 }
+
 #DIV_1_1 {
     block-size: 399px;
     box-sizing: border-box;
@@ -40,6 +42,7 @@
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
     padding: 16px 7px;
 }
+
 #DIV_2_1 {
     overflow-y: auto;
     block-size: 367px;
@@ -51,7 +54,7 @@
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
     padding: 0px 15px;
 }
- 
+
 #H4_3 {
     block-size: 32px;
     box-sizing: border-box;
@@ -90,25 +93,33 @@
 
 
 
-#SPAN_6, #SPAN_7, #SPAN_10, #SPAN_12{
+#SPAN_6,
+#SPAN_7,
+#SPAN_10,
+#SPAN_12 {
     box-sizing: border-box;
     perspective-origin: 0px 0px;
     text-rendering: optimizelegibility;
     transform-origin: 0px 0px;
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
 }
-#SAV{
+
+#SAV {
     margin-top: 5%;
     margin-left: 40%;
 }
-#SAV button{
+
+#SAV button {
     background-color: #63e198;
     padding: 1rem;
 }
-#SAV button:hover{
+
+#SAV button:hover {
     cursor: pointer;
 }
-#SPAN_8_1, #SPAN_11 {
+
+#SPAN_8_1,
+#SPAN_11 {
     box-sizing: border-box;
     perspective-origin: 0px 0px;
     text-rendering: optimizelegibility;
@@ -208,7 +219,9 @@
     width: 24px;
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
     overflow: hidden;
-}/*#svg_21*/
+}
+
+/*#svg_21*/
 
 
 
@@ -219,7 +232,9 @@
     text-rendering: optimizelegibility;
     transform-origin: 0px 0px;
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
-}/*#use_22*/
+}
+
+/*#use_22*/
 
 
 
@@ -235,8 +250,6 @@
     width: 863.5px;
     font: 16px / 22px "Noto Sans", AdihausDIN, Helvetica, Arial, sans-serif;
     margin: 40px 0px 0px;
-}/*#DIV_23*/
+}
 
-
-
-
+/*#DIV_23*/
