@@ -51,6 +51,17 @@
         <div id="modal_popup" onclick="modalPopUp(false)">
 
         </div>
+        <div class="modal_confirm" onclick="closeModalConfirm()">
+                <div class="modal_confirm-form" onclick="event.stopPropagation()">
+                   <span > <i onclick="closeModalConfirm()" class="fa-solid fa-xmark"></i></span>
+                    <p>Are you sure you want to delete it?</p>
+                    <div class="modal_confirm-btn">
+                        <button  onclick="handleDeleteConfirm(this)">Yes,Delete it</button>
+                         <button onclick="closeModalConfirm()">Cancel</button>
+                    </div> 
+                </div>
+               
+        </div>
     </div>
 
 
@@ -68,7 +79,7 @@
         setInterval(()=>{
             const numberOrder=JSON.parse(localStorage.getItem('orders')).length;
             const isCheckOrder=numberOrder >0 ? true :false;
-                isCheckOrder && isShowTitle ? ( document.title = `new orders (${numberOrder})`) : ( document.title = `ADMIN`);
+                isCheckOrder && isShowTitle ? ( document.title = `New orders (${numberOrder})`) : ( document.title = `ADMIN`);
                 isShowTitle=!isShowTitle
 
         },1300);

@@ -24,7 +24,7 @@ function render() {
             <td>${item.size}</td>
             <td>
                 <button onclick="handleCallEdit(${item.id})" class="product_action-btn bg-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button onclick="handleDel(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
+                <button onclick="showModalConfim(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
             </td>
         </tr>`;
         });
@@ -85,10 +85,10 @@ function handleUpdateProduct(e) {
     }
 }
 
-function handleDel(id) {
+function handleDeleteConfirm() {
     const tbodyProduct = document.querySelector('#account_tbody');
+    const id= JSON.parse(localStorage.getItem('products_delete_id'));
     const products = JSON.parse(localStorage.getItem('products'));
-
     const result = products.map((item, index) => {
 
         if (item.id === id) products.splice(index, 1);
@@ -103,13 +103,18 @@ function handleDel(id) {
         <td>${item.size}</td>
         <td>
             <button onclick="handleEdit(${item.id})" class="product_action-btn bg-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button onclick="handleDel(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
+            <button onclick="showModalConfim(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
         </td>
     </tr>`;
     });
+ 
+    tbodyProduct.innerHTML = result.join('');
+    closeModalConfirm();
+    loadFileHtml('content', '../../Admin/Products/list');
+    activeSideBar('#sidebar_li-product');
     localStorage.setItem('products', JSON.stringify(products));
 
-    tbodyProduct.innerHTML = result.join('')
+   
 }
 function handleCreateProduct(e) {
     const nameProduct = document.querySelector('#product_name').value
@@ -204,7 +209,7 @@ function handleSearchProduct(e) {
             <td>${item.size}</td>
             <td>
                 <button onclick="handleCallEdit(${item.id})" class="product_action-btn bg-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button onclick="handleDel(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
+                <button onclick="showModalConfim(${item.id})" class="product_action-btn bg-delete"><i class="fa-solid fa-trash"></i></button>
             </td>
         </tr>`;
         });

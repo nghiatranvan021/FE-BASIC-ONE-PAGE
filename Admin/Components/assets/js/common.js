@@ -456,6 +456,24 @@ function handleSaveChangePassword(e) {
     }
 }
 
+function showModalConfim(id){
+    const parent =document.querySelector('.modal_confirm');
+    if(parent.classList.contains('not-active-confim')){
+        parent.classList.remove('not-active-confim');
+    }
+    parent.classList.add('active-confim');
+    localStorage.setItem('products_delete_id',JSON.stringify(id));
+}
+function closeModalConfirm(){
+    localStorage.removeItem('products_delete_id');
+    const parent =document.querySelector('.modal_confirm');
+   if(parent.classList.contains('active-confim')){
+    parent.classList.remove('active-confim');
+    parent.classList.add('not-active-confim');
+   
+   }
+}
+
 // Todo
 function todo() {
     showMessage('Info', 'This feature is not in development yet.', 'info', 3000);
