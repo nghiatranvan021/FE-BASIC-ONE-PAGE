@@ -62,7 +62,18 @@
     <script src="../assets/js/order.js"></script>
     <script src="../assets/js/product.js"></script>
     <script>
+       
+      
+        let isShowTitle=true;
+        setInterval(()=>{
+            const numberOrder=JSON.parse(localStorage.getItem('orders')).length;
+            const isCheckOrder=numberOrder >0 ? true :false;
+                isCheckOrder && isShowTitle ? ( document.title = `new orders (${numberOrder})`) : ( document.title = `ADMIN`);
+                isShowTitle=!isShowTitle
+
+        },1300);
         setInterval(async () => {
+           
             try {
                 const online = await fetch("https://img.shields.io/github/workflow/status/ssda/asd/ss");
 
