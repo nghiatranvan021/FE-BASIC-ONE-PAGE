@@ -78,7 +78,7 @@
         let isShowTitle = true;
         setInterval(() => {
             let numberOrder = 0;
-            const Order = JSON.parse(localStorage.getItem('orders'));
+            const Order = JSON.parse(localStorage.getItem('orders')) ?? [];
             Order.map((item) => {
                 if (item.status == 'pending') numberOrder++;
             });
