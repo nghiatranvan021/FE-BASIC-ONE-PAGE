@@ -77,14 +77,18 @@
 
         let isShowTitle = true;
         setInterval(() => {
-            const numberOrder = JSON.parse(localStorage.getItem('orders')).length;
+            let numberOrder = 0;
+            const Order = JSON.parse(localStorage.getItem('orders'));
+            Order.map((item) => {
+                if (item.status == 'pending') numberOrder++;
+            });
             const isCheckOrder = numberOrder > 0 ? true : false;
             const isCheckOrderFile = document.querySelector('.orders') == null ? false : true;
 
             !isCheckOrderFile && isCheckOrder && isShowTitle ? (document.title = `New orders (${numberOrder})`) : (document.title = `ADMIN`);
             isShowTitle = !isShowTitle
 
-        }, 1300);
+        }, 3000);
         setInterval(async () => {
 
             try {
