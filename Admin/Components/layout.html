@@ -52,15 +52,15 @@
 
         </div>
         <div class="modal_confirm" onclick="closeModalConfirm()">
-                <div class="modal_confirm-form" onclick="event.stopPropagation()">
-                   <span > <i onclick="closeModalConfirm()" class="fa-solid fa-xmark"></i></span>
-                    <p>Are you sure you want to delete it?</p>
-                    <div class="modal_confirm-btn">
-                        <button  onclick="handleDeleteConfirm(this)">Yes,Delete it</button>
-                         <button onclick="closeModalConfirm()">Cancel</button>
-                    </div> 
+            <div class="modal_confirm-form" onclick="event.stopPropagation()">
+                <span> <i onclick="closeModalConfirm()" class="fa-solid fa-xmark"></i></span>
+                <p>Are you sure you want to delete it?</p>
+                <div class="modal_confirm-btn">
+                    <button onclick="handleDeleteConfirm(this)">Yes,Delete it</button>
+                    <button onclick="closeModalConfirm()">Cancel</button>
                 </div>
-               
+            </div>
+
         </div>
     </div>
 
@@ -73,25 +73,27 @@
     <script src="../assets/js/order.js"></script>
     <script src="../assets/js/product.js"></script>
     <script>
-       
-      
-        let isShowTitle=true;
-        setInterval(()=>{
-            const numberOrder=JSON.parse(localStorage.getItem('orders')).length;
-            const isCheckOrder=numberOrder >0 ? true :false;
-                isCheckOrder && isShowTitle ? ( document.title = `New orders (${numberOrder})`) : ( document.title = `ADMIN`);
-                isShowTitle=!isShowTitle
 
-        },1300);
+
+        let isShowTitle = true;
+        setInterval(() => {
+            const numberOrder = JSON.parse(localStorage.getItem('orders')).length;
+            const isCheckOrder = numberOrder > 0 ? true : false;
+            const isCheckOrderFile = document.querySelector('.orders') == null ? false : true;
+
+            !isCheckOrderFile && isCheckOrder && isShowTitle ? (document.title = `New orders (${numberOrder})`) : (document.title = `ADMIN`);
+            isShowTitle = !isShowTitle
+
+        }, 1300);
         setInterval(async () => {
-           
+
             try {
                 const online = await fetch("https://img.shields.io/github/workflow/status/ssda/asd/ss");
 
                 return online.status >= 200 && online.status < 300
 
             } catch (err) {
-                window.location.href ='../../Client/user/Network/network_error.html';
+                window.location.href = '../../Client/user/Network/network_error.html';
                 return false;
             }
 
@@ -102,6 +104,7 @@
         // loadFileHtml('content', '../Products/add')
         document.addEventListener('DOMContentLoaded', () => {
             checkLogin();
+
 
         });
     </script>
