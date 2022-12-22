@@ -529,3 +529,75 @@ cursor: pointer;
       transform: scale(0);
     }
   }
+
+  .app_internet{
+    position: fixed;
+    bottom: 5px;
+    left: 20px;
+    min-height: 70px;
+    background-color: #242526;
+    border-radius: 5px;
+    border: none;
+    display: none;
+    padding: 10px 5px;
+    box-shadow: 1px 1px 4px #ccc;
+    align-items: center;
+  }
+  .app_internet.active{
+    display: flex;   
+    animation: internet 0.3s ease-in forwards;
+
+  }
+  .app_internet-modal{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+  }
+  .app_internet-modal i:last-child{
+    color: #dcdfe3;
+  
+  }
+  .app_internet-modal i:last-child:hover{
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .app_internet-modal a{
+    float: right;
+    margin: 0 20px;
+    font-size: 16px;
+    color: #3f83d6;
+    text-decoration: none;
+  }
+  .app_internet-modal p{
+    color:#c6c9cc;
+    font-size: 14px;
+    width: 170px;
+    margin-left: 10px;
+  }
+  .app_internet-modal.online i:first-child{
+    color:#00a500 ;
+  }
+  .app_internet-modal i:first-child{
+    color:#666768 ;
+  }
+ /* .app_internet:not('online') .app_internet-modal i:first-child::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #666768;
+    transform: rotate(135deg);
+    left: 15px;
+    bottom: 35px;
+  } */
+  @keyframes internet{
+    /* 0% {
+        /* transform: translateY(0); */
+    /* }  */
+    0%{
+        transform: translateY(110%);
+    }
+  }
+

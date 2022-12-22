@@ -62,6 +62,9 @@
             </div>
 
         </div>
+        <div class="app_internet">
+        
+        </div>
     </div>
 
 
@@ -73,8 +76,37 @@
     <script src="../assets/js/order.js"></script>
     <script src="../assets/js/product.js"></script>
     <script>
-
-
+        const internet=document.querySelector('.app_internet');
+        const truckOnline=`<div class="app_internet-modal online">
+                <i class="fa-solid fa-wifi"></i>
+                <p>Your internet connection was restored.</p>
+                <i onclick="handleOffInternet()" class="fa-solid fa-xmark"></i>
+            </div>`;
+        const struckOffline=` <div class="app_internet-modal">
+                <i class="fa-solid fa-wifi"></i>
+                <p>You are currently offline.</p>
+                <a href="">refresh-now</a>
+                <i onclick="handleOffInternet()" class="fa-solid fa-xmark"></i>
+            </div>`;
+        window.addEventListener('online',()=>{
+           
+            internet.innerHTML=truckOnline
+            internet.classList.add('active')
+            setTimeout(()=>{
+                internet.classList.remove('active')
+            },3000)
+        });
+        window.addEventListener('offline',()=>{
+        
+            internet.innerHTML=struckOffline
+            internet.classList.add('active')
+                setTimeout(()=>{
+                    internet.classList.remove('active')
+                },3000)
+        });
+        function handleOffInternet(){
+            internet.classList.remove('active')
+        }   
         let isShowTitle = true;
         setInterval(() => {
             let numberOrder = 0;
@@ -89,19 +121,19 @@
             isShowTitle = !isShowTitle
 
         }, 3000);
-        setInterval(async () => {
+        // setInterval(async () => {
 
-            try {
-                const online = await fetch("https://img.shields.io/github/workflow/status/ssda/asd/ss");
+        //     try {
+        //         const online = await fetch("https://img.shields.io/github/workflow/status/ssda/asd/ss");
 
-                return online.status >= 200 && online.status < 300
+        //         return online.status >= 200 && online.status < 300
 
-            } catch (err) {
-                window.location.href = '../../Client/user/Network/network_error.html';
-                return false;
-            }
+        //     } catch (err) {
+        //         window.location.href = '../../Client/user/Network/network_error.html';
+        //         return false;
+        //     }
 
-        }, 3000)
+        // }, 3000)
         loadFileHtml('header', '../Components/header')
         loadFileHtml('sidebar', '../Components/sidebar')
         loadFileHtml('content', '../Dashboard/dashboard')
